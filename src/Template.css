@@ -1,0 +1,16 @@
+.Template {
+    height: 100%;
+    min-width: 100vw;
+    background-color: aqua;
+    display: flex;
+}
+
+.template-left {
+    width: 50%;
+    background-color: crimson;
+}
+
+.template-right {
+    width: 50%;
+    background-color: coral;
+}

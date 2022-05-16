@@ -3,7 +3,7 @@ import './Landing.css';
 function Landing() {
   return (
     <div className='Landing'>
-      <div className='landing-photo-section'>
+      {/* <div className='landing-photo-section'>
         <div className='landing-photo'>
 
         </div>
@@ -27,6 +27,18 @@ function Landing() {
           <h2>Scroll to start.</h2>
         </div>
 
+      </div> */}
+
+      <div className='landing'>
+        <div className='landing-left'>
+          <div className='landing-left-photo'></div>
+          <div className='landing-left-photo-description'><p>Home located in Lac-Brome, Quebec - Designed by Thomas Balaban</p></div>
+        </div>
+        <div className='landing-right'>
+          <div className='landing-right-title'></div>
+          <div className='landing-right-description'></div>
+          <div className='landing-right-start'></div>
+        </div>
       </div>
     </div>
   );

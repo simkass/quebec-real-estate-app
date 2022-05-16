@@ -1,4 +1,4 @@
-.Landing {
+/* .Landing {
     height: 100%;
     min-width: 100vw;
     background-color: aliceblue;
@@ -102,5 +102,93 @@
         font-size: 48pt;
         margin-left: 100px;
         line-height: 90px;
+    }
+} */
+
+.Landing {
+    height: 100%;
+    min-width: 100vw;
+    background-color: aliceblue;
+    display: inline-flex;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.landing {
+    height: 80%;
+    width: 100%;
+    display: inline-flex;
+    background-color: brown;
+    flex-wrap: wrap;
+}
+
+.landing-left {
+    height: 100%;
+    width: 50%;
+    background-color: aqua;
+}
+
+.landing-left-photo {
+    height: 95%;
+    width: 100%;
+    background-image: url("./assets/pictures/home4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.landing-left-photo-description {
+    height: 5%;
+    width: 100%;
+    display: inline-flex;
+    justify-content: flex-end;
+    background-color: burlywood;
+}
+
+.landing-left-photo-description p {
+    margin-top: 8px;
+}
+
+.landing-right {
+    height: 100%;
+    width: 50%;
+    background-color: rgb(255, 0, 212);
+}
+
+.landing-right-title {
+    height: 40%;
+    width: 100%;
+    background-color: blue;
+}
+
+.landing-right-description {
+    height: 40%;
+    width: 100%;
+    background-color: yellowgreen;
+}
+
+.landing-right-start {
+    height: 20%;
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+@media (max-width: 1500px) {
+    .Landing {
+        height: 200%;
+    }
+
+    .landing {
+        height: 100%;
+    }
+
+    .landing-left {
+        height: 30%;
+        min-width: 100vw;
+    }
+
+    .landing-right {
+        height: 70%;
+        min-width: 100vw;
     }
 }
