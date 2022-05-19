@@ -1,9 +1,7 @@
 import './App.css';
 import Landing from './Landing';
-import Intro from './Intro'
 import HorizontalScroll from 'react-scroll-horizontal'
-import Cleaning from './Cleaning';
-import Template from './Template';
+import Data from './Data';
 
 function App() {
   return (
@@ -11,12 +9,12 @@ function App() {
 
       <HorizontalScroll reverseScroll className='app-horizontal'>
         <Landing />
-        <Template />
+        <Data />
       </HorizontalScroll>
 
       <div className='app-vertical'>
         <Landing />
-        <Template />
+        <Data />
       </div>
 
     </div>
