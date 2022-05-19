@@ -118,14 +118,12 @@
     height: 80%;
     width: 100%;
     display: inline-flex;
-    background-color: brown;
     flex-wrap: wrap;
 }
 
 .landing-left {
     height: 100%;
     width: 50%;
-    background-color: aqua;
 }
 
 .landing-left-photo {
@@ -142,7 +140,6 @@
     width: 100%;
     display: inline-flex;
     justify-content: flex-end;
-    background-color: burlywood;
 }
 
 .landing-left-photo-description p {
@@ -152,30 +149,44 @@
 .landing-right {
     height: 100%;
     width: 50%;
-    background-color: rgb(255, 0, 212);
 }
 
 .landing-right-title {
-    height: 40%;
+    height: 30%;
     width: 100%;
-    background-color: blue;
+}
+
+.landing-right-title h1 {
+    font-size: 64pt;
+    margin-left: 40px;
 }
 
 .landing-right-description {
     height: 40%;
     width: 100%;
-    background-color: yellowgreen;
+    display: inline-flex;
+    align-items: center;
+}
+
+.landing-right-description p {
+    font-size: 16pt;
+    margin-left: 40px;
+    margin-right: 30%;
 }
 
 .landing-right-start {
-    height: 20%;
+    height: 30%;
     width: 100%;
-    background-color: antiquewhite;
+}
+
+.landing-right-start p {
+    font-size: 24pt;
+    margin-left: 40px;
 }
 
 @media (max-width: 1500px) {
     .Landing {
-        height: 200%;
+        height: 120%;
     }
 
     .landing {
@@ -183,12 +194,72 @@
     }
 
     .landing-left {
-        height: 30%;
+        height: 60%;
         min-width: 100vw;
     }
 
+    .landing-left-photo-description {
+        justify-content: center;
+    }
+
     .landing-right {
-        height: 70%;
+        height: 40%;
         min-width: 100vw;
+    }
+
+    .landing-right-title {
+        height: 50%;
+    }
+
+    .landing-right-description {
+        height: 40%;
+    }
+
+    .landing-right-start {
+        height: 10%;
+    }
+}
+
+@media (max-width: 1000px) {
+    .Landing {
+        height: 135%;
+    }
+
+    .landing-left {
+        height: 50%;
+    }
+
+    .landing-right {
+        height: 50%;
+    }
+
+    .landing-left-photo {
+        height: 85%;
+    }
+
+    .landing-left-photo-description {
+        height: 15%;
+        font-size: 10pt;
+    }
+
+    .landing-right-title {
+        height: 32%;
+    }
+
+    .landing-right-title h1 {
+        font-size: 32pt;
+    }
+
+    .landing-right-description {
+        height: 55%;
+    }
+
+    .landing-right-description p {
+        font-size: 14pt;
+        margin-right: 40px;
+    }
+
+    .landing-right-start {
+        height: 10%;
     }
 }
