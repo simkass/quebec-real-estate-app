@@ -33,7 +33,44 @@
     margin: 0;
     margin-left: 20px;
     font-size: 36pt;
+}
 
+.data-left-text {
+    width: 100%;
+    background-color: chartreuse;
+}
+
+.data-left-text p {
+    margin: 20px;
+    font-size: 14pt;
+    line-height: 20pt;
+}
+
+.data-left-img1 {
+    height: 20%;
+    width: 100%;
+}
+
+.img {
+    height: 100%;
+    width: 100%;
+    margin: 20px;
+}
+
+.data-left-img1-img {
+    height: 90%;
+    width: 100%;
+    background-image: url("assets/screens/Filters.PNG");
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: contain;
+}
+
+.data-left-img1-desc {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 @media (max-width: 1500px) {
