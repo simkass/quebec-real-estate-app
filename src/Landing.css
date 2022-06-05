@@ -79,7 +79,7 @@
 
 @media (max-width: 1500px) {
     .Landing {
-        height: 120%;
+        height: 140%;
     }
 
     .landing {
@@ -87,7 +87,7 @@
     }
 
     .landing-left {
-        height: 60%;
+        height: 55%;
         min-width: 100vw;
     }
 
@@ -96,20 +96,25 @@
     }
 
     .landing-right {
-        height: 40%;
+        height: 45%;
         min-width: 100vw;
     }
 
     .landing-right-title {
-        height: 50%;
+        height: 30%;
+    }
+
+    .landing-right-title h1 {
+        font-size: 5vh;
     }
 
     .landing-right-description {
-        height: 40%;
+        height: 50%;
     }
 
     .landing-right-start {
-        height: 10%;
+        height: 20%;
+        margin-bottom: 20px;
     }
 }
 
