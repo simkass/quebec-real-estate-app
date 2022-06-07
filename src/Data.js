@@ -12,7 +12,7 @@ function Data() {
         <div className='data-left-img1'>
           <div className='img'>
             <div className='img-img data-left-img1-img'></div>
-            <div className='img-desc'><p>DuProprio Search Filters.</p></div>
+            <div className='img-desc data-left-img1-desc'><p>DuProprio Search Filters.</p></div>
           </div>
         </div>
         <div className='data-left-text data-left-text2'>
@@ -22,7 +22,7 @@ function Data() {
         <div className='data-left-img2'>
           <div className='img'>
             <div className='img-img data-left-img2-img'></div>
-            <div className='img-desc'><p>DuProprio Search Filters.</p></div>
+            <div className='img-desc data-left-img2-desc'><p>DuProprio Search Filters.</p></div>
           </div>
         </div>
         <div className='data-left-text data-left-text3'>
@@ -36,7 +36,14 @@ function Data() {
           </div>
         </div>
       </div>
-      <div className='data-right'></div>
+      <div className='data-right'>
+      <div className='data-right-img1'>
+          <div className='img'>
+            <div className='img-img data-right-img1-img'></div>
+            <div className='img-desc data-right-img1-desc'><p>Listing thumbnails.</p></div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
