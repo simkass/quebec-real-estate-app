@@ -22,7 +22,7 @@ function Data() {
         <div className='data-left-img2'>
           <div className='img'>
             <div className='img-img data-left-img2-img'></div>
-            <div className='img-desc data-left-img2-desc'><p>DuProprio Search Filters.</p></div>
+            <div className='img-desc data-left-img2-desc'><p>DuProprio individual listing links in a .txt file.</p></div>
           </div>
         </div>
         <div className='data-left-text data-left-text3'>
