@@ -1,5 +1,5 @@
 .Landing {
-    height: 100%;
+    height: 100vh;
     min-width: 100vw;
     background-color: aliceblue;
     display: inline-flex;

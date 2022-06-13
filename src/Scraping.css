@@ -1,0 +1,39 @@
+.Scraping {
+    min-width: 100%;
+    display: inline-flex;
+    justify-content: center;
+}
+
+.scraping {
+    height: 100%;
+    width: 80%;
+}
+
+.title {
+    width: 100%;
+}
+
+.text {
+    width: 100%;
+}
+
+.Image {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: inline-flex;
+    justify-content: center;
+}
+
+img {
+    max-width: 50vw;
+    max-height: 70vh;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
+
+.desc {
+    width: 100%;
+    font-size: 14pt;
+    text-align: center;
+}
