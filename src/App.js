@@ -1,10 +1,14 @@
 import './App.css';
-import Scraping from './Scraping'
+import Home from './Home'
+import Scraping from './Scraping';
+import Preprocessing from './Preprocessing';
 
 function App() {
   return (
     <div className='App'>
+      <Home />
       <Scraping />
+      <Preprocessing />
     </div>
   );
 }

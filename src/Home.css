@@ -1,0 +1,45 @@
+.Home {
+    height: 100vh;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    background-color: aliceblue;
+}
+
+.home {
+    height: 80%;
+    width: 100%;
+    display: inline-flex;
+}
+
+.home-photo {
+    height: 100%;
+    width: 50%;
+}
+
+.home-photo-img {
+    height: 92%;
+    width: 100%;
+    background-image: url("./assets/pictures/home4.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;
+}
+
+.home-photo-desc {
+    height: 8%;
+    min-height: 50px;
+    width: 100%;
+}
+
+.home-photo-desc p {
+    margin-right: 0;
+    font-size: 10pt;
+    text-align: end;
+}
+
+.home-text {
+    height: 100%;
+    width: 50%;
+    background-color: blueviolet;
+}

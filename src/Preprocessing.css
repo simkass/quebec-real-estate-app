@@ -1,0 +1,31 @@
+.Preprocessing {
+    min-width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    background-color: rgb(245, 247, 242);
+}
+
+.preprocessing {
+    height: 100%;
+    width: 80%;
+    margin-bottom: 40px;
+}
+
+.title {
+    width: 100%;
+}
+
+.text {
+    width: 100%;
+}
+
+.table {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.list {
+    margin: 15px;
+    text-align: center;
+    font-weight: bold;
+}

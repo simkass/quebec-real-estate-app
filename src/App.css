@@ -16,6 +16,12 @@ h1 {
   font-size: 32pt;
 }
 
+h2 {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 18pt;
+}
+
 p {
   font-size: 16pt;
   line-height: 22pt;
