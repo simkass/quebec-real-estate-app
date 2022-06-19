@@ -2,6 +2,7 @@ import './App.css';
 import Home from './Home'
 import Scraping from './Scraping';
 import Preprocessing from './Preprocessing';
+import Visualization from './Visualization';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Home />
       <Scraping />
       <Preprocessing />
+      <Visualization />
     </div>
   );
 }

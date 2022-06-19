@@ -83,8 +83,36 @@ function Preprocessing() {
                     </p>
 
                     <p className='list'>Bungalow, 2 Storey, Condominium, Semi-detached, Townhouse, Bi-generation, Split Level, 1 1/2 Storey.</p>
-                    
+
                     <h2>Living Area & Lot Dimensions</h2>
+                    <p>These two continuous numerical features have been filtered by limiting them to a specific interval of values in order to remove outliers.
+                        For example, the following histogram for Living Area clearly shows that most values are between X and Y sq.ft, which becomes our interval of possible values</p>
+
+                    <h2>NaN Values</h2>
+                    <p>When they are scarce, rows containing NaN values can be dropped. This way, we avoid reducing the quality of our dataset by sacrificing a small portion of it.
+                        However, if dropping these rows reduce considerably the size of our dataset, it might be worth sacrificing its quality instead. To do that, we replace NaN values with
+                        ones that accurately represent the rest of the data. This reduces the quality of our dataset because part of the data isn't real anymore, it's estimated using
+                        the statistical parameters of the group it belongs to. The following table indicates how NaN values were replaced (or dropped) for every feature.
+                    </p>
+                </div>
+
+                <div className='table small-table'>
+                    <Table size='small'>
+                        <TableHead>
+                            <TableRow><TableCell><b>Feature</b></TableCell><TableCell><b>NaN Replacement</b></TableCell></TableRow>
+                        </TableHead>
+                        <TableBody>
+                            <TableRow><TableCell align="left">Subtype</TableCell><TableCell align="left">Dropped</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Living Area</TableCell><TableCell align="left">Mean</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Lot Dimensions</TableCell><TableCell align="left">Mean</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Bedrooms</TableCell><TableCell align="left">Dropped</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Bathrooms</TableCell><TableCell align="left">Dropped</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Levels</TableCell><TableCell align="left">Dropped</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Listing Date</TableCell><TableCell align="left">Dropped</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Year of Construction</TableCell><TableCell align="left">Mean</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Price</TableCell><TableCell align="left">Dropped</TableCell></TableRow>
+                        </TableBody>
+                    </Table>
                 </div>
 
             </div>
