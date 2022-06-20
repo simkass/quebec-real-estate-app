@@ -35,6 +35,8 @@ img {
 
 .desc {
     width: 100%;
-    font-size: 14pt;
+    margin-top: 2px;
+    font-size: 13pt;
     text-align: center;
+    color: rgb(61, 61, 61);
 }

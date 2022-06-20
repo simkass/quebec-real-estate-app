@@ -85,9 +85,32 @@ function Preprocessing() {
                     <p className='list'>Bungalow, 2 Storey, Condominium, Semi-detached, Townhouse, Bi-generation, Split Level, 1 1/2 Storey.</p>
 
                     <h2>Living Area & Lot Dimensions</h2>
-                    <p>These two continuous numerical features have been filtered by limiting them to a specific interval of values in order to remove outliers.
-                        For example, the following histogram for Living Area clearly shows that most values are between X and Y sq.ft, which becomes our interval of possible values</p>
+                    <p>These two continuous numerical features have been filtered by limiting them to a specific interval of values in order to remove outliers. To determine the interval of acceptable values for a specific feature,
+                        we consider two things: the feature's typical interval of values, and our dataset's distribution of values. For example, consider the following histogram for the Living Area feature.</p>
+                </div>
 
+                <div className='Image'>
+                    <div className='image'>
+                        <img src={"assets/graphs/living-area-hist-orig.PNG"}></img>
+                        <p className='desc'>Distribution of values for Living Area.</p>
+                    </div>
+                </div>
+
+                <div className='text'>
+                    <p>Looking at this histogram clearly shows that most residential units have a living area between 500 and 3000 square feet. This makes a lot of sense since a typical house will have a living area of around
+                        1000 to 2000 square feet. After adjusting our intervals, we get the following histograms for living area and lot dimensions.
+                    </p>
+                </div>
+
+                <div className='Image'>
+                    <div className='image'>
+                        <img src={"assets/graphs/living-area-hist.PNG"}></img>
+                        <img src={"assets/graphs/lot-dimensions-hist.PNG"}></img>
+                        <p className='desc'>Adjusted distribution of values for Living Area and Lot Dimensions.</p>
+                    </div>
+                </div>
+
+                <div className='text'>
                     <h2>NaN Values</h2>
                     <p>When they are scarce, rows containing NaN values can be dropped. This way, we avoid reducing the quality of our dataset by sacrificing a small portion of it.
                         However, if dropping these rows reduce considerably the size of our dataset, it might be worth sacrificing its quality instead. To do that, we replace NaN values with
