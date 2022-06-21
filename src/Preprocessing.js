@@ -75,7 +75,7 @@ function Preprocessing() {
 
                 <div className='text'>
                     <h2>Subtype & Style</h2>
-                    <p>Subtype and Style are two very similar features. In fact they share a few possible values that are identical such as 2 Storey and Semi-Detached.
+                    <p>Subtype and Style are two very similar categorical features. In fact they share a few possible values that are identical such as 2 Storey and Semi-Detached.
                         The values given by subtype are in my opinion more informative than the style. For example, the style column doesn't have any value for condos whereas the
                         subtype will mark them as Condominiums. For this reason, the style feature is dropped and the subtype is kept. The raw data has 18 unique subtype values,
                         none of them are NaN. However, some of the possible values have less than a thousand occurences. This means they represent less than 1% of the data, making them rather insignificant.
@@ -91,7 +91,7 @@ function Preprocessing() {
 
                 <div className='Image'>
                     <div className='image'>
-                        <img src={"assets/graphs/living-area-hist-orig.PNG"}></img>
+                        <img src={"assets/figures/living-area-hist-orig.PNG"}></img>
                         <p className='desc'>Distribution of values for Living Area.</p>
                     </div>
                 </div>
@@ -104,10 +104,59 @@ function Preprocessing() {
 
                 <div className='Image'>
                     <div className='image'>
-                        <img src={"assets/graphs/living-area-hist.PNG"}></img>
-                        <img src={"assets/graphs/lot-dimensions-hist.PNG"}></img>
+                        <img src={"assets/figures/living-area-hist.PNG"}></img>
+                        <img src={"assets/figures/lot-dimensions-hist.PNG"}></img>
                         <p className='desc'>Adjusted distribution of values for Living Area and Lot Dimensions.</p>
                     </div>
+                </div>
+
+                <div className='text'>
+                    <h2>Bedrooms, Bathrooms & Levels</h2>
+                    <p>Discrete numerical features can treated as categorical when their possible values are few. Based on the dataset, The 3 features have the following intervals:</p>
+                </div>
+
+                <div className='table small-table'>
+                    <Table size='small'>
+                        <TableHead>
+                            <TableRow><TableCell><b>Feature</b></TableCell><TableCell><b>Minimum Value</b></TableCell><TableCell><b>Maximum Value</b></TableCell></TableRow>
+                        </TableHead>
+                        <TableBody>
+                            <TableRow><TableCell align="left">Bedrooms</TableCell><TableCell align="left">1</TableCell><TableCell align="left">7</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Bathrooms</TableCell><TableCell align="left">1</TableCell><TableCell align="left">5</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Levels</TableCell><TableCell align="left">1</TableCell><TableCell align="left">4</TableCell></TableRow>
+                        </TableBody>
+                    </Table>
+                </div>
+
+                <div className='text'>
+                    <p>Keep in mind that while there exists homes with more than 4 bathrooms and 7 bedrooms, they are part of a very niche market that is not highly covered by our dataset.</p>
+                    <p>Also note that the values for these features have been converted to integers rather than their original floating point format.</p>
+                </div>
+
+                <div className='text'>
+                    <h2>Listing Date</h2>
+                    <p></p>
+                </div>
+
+                <div className='text'>
+                    <h2>Year of Construction</h2>
+                    <p></p>
+                </div>
+
+
+                <div className='text'>
+                    <h2>Municipal Evaluation</h2>
+                    <p></p>
+                </div>
+
+                <div className='text'>
+                    <h2>Price</h2>
+                    <p></p>
+                </div>
+
+                <div className='text'>
+                    <h2>Location</h2>
+                    <p></p>
                 </div>
 
                 <div className='text'>
@@ -122,18 +171,18 @@ function Preprocessing() {
                 <div className='table small-table'>
                     <Table size='small'>
                         <TableHead>
-                            <TableRow><TableCell><b>Feature</b></TableCell><TableCell><b>NaN Replacement</b></TableCell></TableRow>
+                            <TableRow><TableCell><b>Feature</b></TableCell><TableCell><b>NaN Replacement Method</b></TableCell><TableCell><b>NaN Replacement Value</b></TableCell></TableRow>
                         </TableHead>
                         <TableBody>
-                            <TableRow><TableCell align="left">Subtype</TableCell><TableCell align="left">Dropped</TableCell></TableRow>
-                            <TableRow><TableCell align="left">Living Area</TableCell><TableCell align="left">Mean</TableCell></TableRow>
-                            <TableRow><TableCell align="left">Lot Dimensions</TableCell><TableCell align="left">Mean</TableCell></TableRow>
-                            <TableRow><TableCell align="left">Bedrooms</TableCell><TableCell align="left">Dropped</TableCell></TableRow>
-                            <TableRow><TableCell align="left">Bathrooms</TableCell><TableCell align="left">Dropped</TableCell></TableRow>
-                            <TableRow><TableCell align="left">Levels</TableCell><TableCell align="left">Dropped</TableCell></TableRow>
-                            <TableRow><TableCell align="left">Listing Date</TableCell><TableCell align="left">Dropped</TableCell></TableRow>
-                            <TableRow><TableCell align="left">Year of Construction</TableCell><TableCell align="left">Mean</TableCell></TableRow>
-                            <TableRow><TableCell align="left">Price</TableCell><TableCell align="left">Dropped</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Subtype</TableCell><TableCell align="left">Dropped</TableCell><TableCell align="left">-</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Living Area</TableCell><TableCell align="left">Mean</TableCell><TableCell align="left">1350 sq. ft</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Lot Dimensions</TableCell><TableCell align="left">Mean</TableCell><TableCell align="left">7500 sq. ft</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Bedrooms</TableCell><TableCell align="left">Dropped</TableCell><TableCell align="left">-</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Bathrooms</TableCell><TableCell align="left">Dropped</TableCell><TableCell align="left">-</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Levels</TableCell><TableCell align="left">Dropped</TableCell><TableCell align="left">-</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Listing Date</TableCell><TableCell align="left">Dropped</TableCell><TableCell align="left">-</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Year of Construction</TableCell><TableCell align="left">Mean</TableCell><TableCell align="left">1992</TableCell></TableRow>
+                            <TableRow><TableCell align="left">Price</TableCell><TableCell align="left">Dropped</TableCell><TableCell align="left">-</TableCell></TableRow>
                         </TableBody>
                     </Table>
                 </div>

@@ -21,12 +21,13 @@
 
 .table {
     margin-top: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .small-table {
     max-width: 1000px;
     margin: auto;
+    margin-bottom: 20px;
 }
 
 .list {
@@ -46,6 +47,13 @@
 }
 
 img {
+    max-width: 50vw;
+    max-height: 70vh;
+    height: auto;
+    width: auto\9; /* ie8 */
+}
+
+.html-img {
     max-width: 50vw;
     max-height: 70vh;
     height: auto;
