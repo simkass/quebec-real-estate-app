@@ -135,18 +135,24 @@ function Preprocessing() {
 
                 <div className='text'>
                     <h2>Listing Date</h2>
-                    <p></p>
+                    <p>Listing dates were scraped in a YYYYMM format. They were simply transformed into Datetime objects with the day being the first of the month.</p>
                 </div>
 
                 <div className='text'>
                     <h2>Year of Construction</h2>
-                    <p></p>
+                    <p>While technically a date, no information about the month or the day is given in the scraped data. Therefore, the values were simply transformed into integers. </p>
                 </div>
 
 
                 <div className='text'>
                     <h2>Municipal Evaluation</h2>
-                    <p></p>
+                    <p>If you're a home owner, you're most likely paying property taxes that are proportional to the value of your property. Your city will evaluate your home's
+                        market value every few years to make sure your property taxes are adequate.</p>
+
+                    <p>While very interesting, I decided to drop this column all togheter for the following two reasons:</p>
+                    <p>1. I have no information regarding the date of the municipal assessment, meaning I can't tell how recent and up to date the evaluation is.
+                        This makes it rather unreliable because I wouldn't want to use a 10 year old evaluation the same way I would a 2 year old one.</p>
+                    <p>2. One of my goals is to train a model to predict home prices. It doesn't make sense to use a human prediction as a feature in an AI model trying to output the same prediction.</p>
                 </div>
 
                 <div className='text'>
