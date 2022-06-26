@@ -3,8 +3,12 @@ import './Template.css';
 function Template() {
   return (
     <div className='Template'>
-        <div className='template-left'></div>
-        <div className='template-right'></div>
+      <div className='template'>
+        <div className='title'>
+          <h1>Title.</h1>
+        </div>
+      </div>
+
     </div>
   );
 }
