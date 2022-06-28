@@ -157,12 +157,18 @@ function Preprocessing() {
 
                 <div className='text'>
                     <h2>Price</h2>
-                    <p></p>
+                    <p>Price is the label of our dataset. Obviously, a row without a price is useless and is therefore dropped. Further more, our dataset include a few very low price homes and a few very high priced homes. 
+                        Similarly to what we did with lot dimensions and living areas, we limit our price values to a specific interval based on our calculated distribution of possible values. In this case, we settle for homes
+                        that sold for prices between 20 000 CAD$ and 1 million CAD$. 
+                    </p>
                 </div>
 
                 <div className='text'>
                     <h2>Location</h2>
-                    <p></p>
+                    <p>
+                        Location is without a doubt the most difficult feature to process. As you'll see later, a home's market value in Quebec is highly dependant on its geographical location. 
+                        Therefore, this feature is highly important if we want to train a high quality prediction model. However, the dataset simply has too many different location values!
+                    </p>
                 </div>
 
                 <div className='text'>
