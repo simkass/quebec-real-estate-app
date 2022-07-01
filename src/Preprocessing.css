@@ -67,3 +67,8 @@ img {
     text-align: center;
     color: rgb(61, 61, 61);
 }
+
+.numbered {
+    margin: 0px;
+    margin-left: 50px;
+}

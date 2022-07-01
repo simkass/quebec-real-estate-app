@@ -157,18 +157,32 @@ function Preprocessing() {
 
                 <div className='text'>
                     <h2>Price</h2>
-                    <p>Price is the label of our dataset. Obviously, a row without a price is useless and is therefore dropped. Further more, our dataset include a few very low price homes and a few very high priced homes. 
+                    <p>Price is the label of our dataset. Obviously, a row without a price is useless and is therefore dropped. Further more, our dataset include a few very low price homes and a few very high priced homes.
                         Similarly to what we did with lot dimensions and living areas, we limit our price values to a specific interval based on our calculated distribution of possible values. In this case, we settle for homes
-                        that sold for prices between 20 000 CAD$ and 1 million CAD$. 
+                        that sold for prices between 20 000 CAD$ and 1 million CAD$.
                     </p>
                 </div>
 
                 <div className='text'>
                     <h2>Location</h2>
                     <p>
-                        Location is without a doubt the most difficult feature to process. As you'll see later, a home's market value in Quebec is highly dependant on its geographical location. 
-                        Therefore, this feature is highly important if we want to train a high quality prediction model. However, the dataset simply has too many different location values!
+                        Location is without a doubt the most difficult feature to process. As you'll see later, a home's market value in Quebec is highly dependant on its geographical location.
+                        Therefore, this feature is highly important if we want to train a high quality prediction model. However, the dataset simply has too many different location values! This means that
+                        we simply don't have enough data for a good chunk of these values. For example, one possible location is Saint-Simon, a small town in southwesten Quebec with a population under 1500.
+                        With a town so small, it's not that surprising to find out it has only two listings in the the raw dataset.
                     </p>
+                    <p>
+                        We must find a way to categorize our location data in a way that would reduce the number of possible values while still maintaining a significant amount of information. One simply way is to separate
+                        the province in a few regions of interest and map every location to the region it belongs to. One possible way to do this is to use Quebec's administrative regions. However, some locations require
+                        a higher level of granularity. For example, homes in Montreal can vary in price depending on their boroughs. This means that for Montreal locations, it would be best to have a high level of granularity.
+                        On the other hand, small towns in the region of XXXXXXXX all have similarly priced markets. We can therefore group them into a single region (low level of granularity).
+                    </p>
+                    <p>Multiple different mapping strategies were tested in order to find the one that gave the best results when training the model. Some of them include mapping locations to their closest city centers, their
+                        respective administrative regions and sometimes just keeping them as they are. I'm gonna spare you the trial and error process I followed and just describe to you the chosen mapping strategy.</p>
+                    <p>
+
+                    </p>
+
                 </div>
 
                 <div className='text'>
