@@ -40,3 +40,18 @@ img {
     text-align: center;
     color: rgb(61, 61, 61);
 }
+
+@media screen and (max-width: 1000px) {
+    .scraping {
+        width: 100%;
+        margin-top: 20px;
+    }
+    .title h1 {
+        margin: 20px;
+        font-size: 20pt;
+    }
+    .text p {
+        margin: 20px;
+        font-size: 12pt;
+    }
+}

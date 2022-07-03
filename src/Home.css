@@ -27,8 +27,7 @@
 }
 
 .home-photo-desc {
-    height: 8%;
-    min-height: 50px;
+    height: fit-content;
     width: 100%;
 }
 
@@ -62,6 +61,60 @@
 .home-text p {
     margin: 50px;
     margin-top: 15%;
-    margin-right: 100px;
+    margin-right: 350px;
     font-size: 14pt;
+}
+
+@media screen and (max-width: 1800px) {
+    .home-text h1 {
+        margin-right: 50px;
+    }
+    .home-text p {
+        margin-right: 100px;
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .Home{
+        height: fit-content;
+    }
+    .home {
+        height: 100%;
+        display: block;
+    }
+    .home-photo {
+        height: 50%;
+        width: 100%;
+    }
+    .home-photo-img {
+        min-height: 350px;
+    }
+    .home-photo-desc p {
+        margin: 5px;
+        font-size: 9pt;
+        text-align: center;
+    }
+    .home-text {
+        height: fit-content;
+        width: 100%;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+    .home-text h1 {
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 20pt;
+    }
+    .home-text h2 {
+        margin: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 14pt;
+    }
+    .home-text p {
+        margin: 50px;
+        margin-left: 20px;
+        margin-right: 20px;
+        font-size: 12pt;
+    }
 }
