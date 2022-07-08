@@ -319,7 +319,11 @@ function Preprocessing() {
             error process I followed and just describe to you the chosen mapping
             strategy.
           </p>
-          <p></p>
+          <p>Simply put, I curated a list of around 100 population centers based on population and mapped all raw locations to their closest geographical population center.
+              The population centers consist of cities with a population over 100k. Montreal is the biggest city in the province and has a lot of boroughs with big populations. In our raw dataset,
+              most of these boroughs have enough listings to have a significant impact on our AI model. Therefore, we maintain a certain level of granularity in Montreal by categorizing listings
+              by boroughs rather than simply giving them a "Montreal" label. On final note is that the distance calculated between population centers is simply the shortest direct line between the two locations. (Calculated using <a href="https://geopy.readthedocs.io/en/stable/" target="_blank">GeoPy Python Library</a>).
+          </p>
         </div>
 
         <div className="text">
