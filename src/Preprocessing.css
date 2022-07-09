@@ -25,7 +25,9 @@
 }
 
 .small-table {
+    width: 70%;
     max-width: 1000px;
+    min-width: 500px;
     margin: auto;
     margin-bottom: 20px;
 }
@@ -53,23 +55,63 @@ img {
     width: auto\9; /* ie8 */
 }
 
-.html-img {
-    max-width: 50vw;
-    max-height: 70vh;
-    height: auto;
-    width: auto\9; /* ie8 */
-}
-
 .desc {
     width: 100%;
     margin-top: 2px;
-    font-size: 13pt;
     text-align: center;
-    color: rgb(61, 61, 61);
+}
+
+.image p {
+    font-size: 13pt;
+    color: rgb(85, 85, 85);
 }
 
 .numbered {
     margin: 0px;
     margin-bottom: 25px;
     margin-left: 50px;
+}
+
+@media screen and (max-width: 1000px) {
+    .preprocessing {
+        width: 100vw;
+        margin-top: 20px;
+    }
+    .title h1 {
+        margin: 20px;
+        font-size: 20pt;
+    }
+    h2 {
+        margin: 20px;
+        font-size: 16pt;
+    }
+    .text p {
+        margin: 20px;
+        font-size: 12pt;
+    }
+    .image {
+        width: 95%;
+    }
+    img {
+        min-width: 100%;
+        max-width: 100%;
+        height: auto;
+    }
+    .desc {
+        height: fit-content;
+        width: 100%;
+        margin-top: 2px;
+        text-align: center;
+    }
+    .image p {
+        font-size: 11pt;
+        color: rgb(61, 61, 61);
+    }
+
+    .table, .small-table {
+        width: 95%;
+        max-width: 95%;
+        min-width: 95%;
+        margin: auto;
+    }
 }

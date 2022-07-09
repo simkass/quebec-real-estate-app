@@ -1,5 +1,6 @@
 import "./Preprocessing.css";
 import {
+  TableContainer,
   Table,
   TableBody,
   TableCell,
@@ -12,11 +13,22 @@ import Papa from "papaparse";
 function Preprocessing() {
   const [rawRows, setRows] = React.useState([]);
   React.useEffect(() => {
-    Papa.parse("assets/data/raw.csv", {
+    Papa.parse("assets/data/raw_sample.csv", {
       download: true,
       header: true,
       complete: (data) => {
         setRows(data.data);
+      },
+    });
+  }, []);
+
+  const [rows, mapRows] = React.useState([]);
+  React.useEffect(() => {
+    Papa.parse("assets/data/location_mapper_sample.csv", {
+      download: true,
+      header: true,
+      complete: (data) => {
+        mapRows(data.data);
       },
     });
   }, []);
@@ -36,7 +48,8 @@ function Preprocessing() {
         </div>
 
         <div className="table">
-          <Table size="small">
+          <TableContainer sx={{width: "100%"}}>
+          <Table size="small" sx={{width: "max-content"}}>
             <TableHead>
               <TableRow>
                 <TableCell>
@@ -95,7 +108,7 @@ function Preprocessing() {
                 </TableRow>
               ))}
             </TableBody>
-          </Table>
+          </Table></TableContainer>
         </div>
 
         <div className="text">
@@ -179,7 +192,8 @@ function Preprocessing() {
         </div>
 
         <div className="table small-table">
-          <Table size="small">
+        <TableContainer sx={{width: "100%"}}>
+          <Table size="small" sx={{width: "max-content", margin:"auto"}}>
             <TableHead>
               <TableRow>
                 <TableCell>
@@ -211,6 +225,7 @@ function Preprocessing() {
               </TableRow>
             </TableBody>
           </Table>
+          </TableContainer>
         </div>
 
         <div className="text">
@@ -309,21 +324,68 @@ function Preprocessing() {
             its surroundings (Saint-Hyacinthe Metropolitan Area &#x1F605;).
           </p>
           <p>
-            We must find a way to categorize our location data in a way that
-            would reduce the number of possible values while still maintaining a
-            significant amount of information. I tested multiple ways of mapping
-            the locations such as finding the closest city center (like
-            described in the previous paragraph) or grouping by administrative
-            regions. The adequate mapping strategy is simply the one that yields
-            the most accurate AI model. I'm going to spare you the trial and
-            error process I followed and just describe to you the chosen mapping
-            strategy.
+            We must find a way to categorize our 1141 unique locations in a way
+            that would reduce the number of possible values while still
+            maintaining a significant amount of information. I tested multiple
+            ways of mapping the locations such as finding the closest city
+            center (like described in the previous paragraph) or grouping by
+            administrative regions. The adequate mapping strategy is simply the
+            one that yields the most accurate AI model. I'm going to spare you
+            the trial and error process I followed and just describe to you the
+            chosen mapping strategy.
           </p>
-          <p>Simply put, I curated a list of around 100 population centers based on population and mapped all raw locations to their closest geographical population center.
-              The population centers consist of cities with a population over 100k. Montreal is the biggest city in the province and has a lot of boroughs with big populations. In our raw dataset,
-              most of these boroughs have enough listings to have a significant impact on our AI model. Therefore, we maintain a certain level of granularity in Montreal by categorizing listings
-              by boroughs rather than simply giving them a "Montreal" label. On final note is that the distance calculated between population centers is simply the shortest direct line between the two locations. (Calculated using <a href="https://geopy.readthedocs.io/en/stable/" target="_blank">GeoPy Python Library</a>).
+          <p>
+            Simply put, I curated a list of around 120 population centers based
+            on population and mapped all raw locations to their closest
+            geographical population center. The population centers consist of
+            cities with a population over 100k. Montreal is the biggest city in
+            the province and has a lot of boroughs with big populations. In our
+            raw dataset, most of these boroughs have enough listings to have a
+            significant impact on our AI model. Therefore, we maintain a certain
+            level of granularity in Montreal by categorizing Montreal listings
+            by boroughs rather than simply giving them a "Montreal" label. On
+            final note is that the distance calculated between population
+            centers is simply the shortest direct line between the two
+            locations. (Calculated using{" "}
+            <a href="https://geopy.readthedocs.io/en/stable/" target="_blank">
+              GeoPy Python Library
+            </a>
+            ).
           </p>
+          <p>
+            From over a thousand unique locations to a little over 100 is a
+            significant 10x decrease which should help our model a lot. Here's a
+            sample of the final mapping table:
+          </p>
+        </div>
+
+        <div className="small-table">
+        <TableContainer sx={{width: "100%"}}>
+          <Table size="small" sx={{width: "max-content", margin:"auto"}}>
+            <TableHead>
+              <TableRow>
+                <TableCell>
+                  <b>Location</b>
+                </TableCell>
+                <TableCell>
+                  <b>Mapping</b>
+                </TableCell>
+              </TableRow>
+            </TableHead>
+            <TableBody>
+              {rows.map((row) => (
+                <TableRow>
+                  <TableCell align="left">{row.Location}</TableCell>
+                  <TableCell align="left">{row.Mapping}</TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+          </TableContainer>
+        </div>
+
+        <div className="text">
+          <p></p>
         </div>
 
         <div className="text">
@@ -343,7 +405,8 @@ function Preprocessing() {
         </div>
 
         <div className="table small-table">
-          <Table size="small">
+        <TableContainer sx={{width: "100%"}}>
+          <Table size="small" sx={{width: "max-content", margin:"auto"}}>
             <TableHead>
               <TableRow>
                 <TableCell>
@@ -405,6 +468,7 @@ function Preprocessing() {
               </TableRow>
             </TableBody>
           </Table>
+          </TableContainer>
         </div>
       </div>
     </div>
