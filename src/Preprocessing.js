@@ -48,67 +48,67 @@ function Preprocessing() {
         </div>
 
         <div className="table">
-          <TableContainer sx={{width: "100%"}}>
-          <Table size="small" sx={{width: "max-content"}}>
-            <TableHead>
-              <TableRow>
-                <TableCell>
-                  <b>Subtype</b>
-                </TableCell>
-                <TableCell>
-                  <b>Style</b>
-                </TableCell>
-                <TableCell>
-                  <b>Living Area</b>
-                </TableCell>
-                <TableCell>
-                  <b>Lot Dimensions</b>
-                </TableCell>
-                <TableCell>
-                  <b>Bedrooms</b>
-                </TableCell>
-                <TableCell>
-                  <b>Bathrooms</b>
-                </TableCell>
-                <TableCell>
-                  <b>Levels</b>
-                </TableCell>
-                <TableCell>
-                  <b>Location</b>
-                </TableCell>
-                <TableCell>
-                  <b>Listing Date</b>
-                </TableCell>
-                <TableCell>
-                  <b>Year of Construction</b>
-                </TableCell>
-                <TableCell>
-                  <b>Municipal Evaluation</b>
-                </TableCell>
-                <TableCell>
-                  <b>Price</b>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rawRows.map((row) => (
+          <TableContainer sx={{ width: "100%" }}>
+            <Table size="small" sx={{ width: "max-content" }}>
+              <TableHead>
                 <TableRow>
-                  <TableCell align="left">{row.subtype}</TableCell>
-                  <TableCell align="left">{row.style}</TableCell>
-                  <TableCell align="left">{row.living_area}</TableCell>
-                  <TableCell align="left">{row.lot_dimensions}</TableCell>
-                  <TableCell align="left">{row.bedrooms}</TableCell>
-                  <TableCell align="left">{row.bathrooms}</TableCell>
-                  <TableCell align="left">{row.levels}</TableCell>
-                  <TableCell align="left">{row.location}</TableCell>
-                  <TableCell align="left">{row.listing_date}</TableCell>
-                  <TableCell align="left">{row.year_of_construction}</TableCell>
-                  <TableCell align="left">{row.municipal_eval}</TableCell>
-                  <TableCell align="left">{row.price}</TableCell>
+                  <TableCell>
+                    <b>Subtype</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Style</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Living Area</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Lot Dimensions</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Bedrooms</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Bathrooms</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Levels</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Location</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Listing Date</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Year of Construction</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Municipal Evaluation</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Price</b>
+                  </TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table></TableContainer>
+              </TableHead>
+              <TableBody>
+                {rawRows.map((row) => (
+                  <TableRow>
+                    <TableCell align="left">{row.subtype}</TableCell>
+                    <TableCell align="left">{row.style}</TableCell>
+                    <TableCell align="left">{row.living_area}</TableCell>
+                    <TableCell align="left">{row.lot_dimensions}</TableCell>
+                    <TableCell align="left">{row.bedrooms}</TableCell>
+                    <TableCell align="left">{row.bathrooms}</TableCell>
+                    <TableCell align="left">{row.levels}</TableCell>
+                    <TableCell align="left">{row.location}</TableCell>
+                    <TableCell align="left">{row.listing_date}</TableCell>
+                    <TableCell align="left">{row.year_of_construction}</TableCell>
+                    <TableCell align="left">{row.municipal_eval}</TableCell>
+                    <TableCell align="left">{row.price}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table></TableContainer>
         </div>
 
         <div className="text">
@@ -192,39 +192,39 @@ function Preprocessing() {
         </div>
 
         <div className="table small-table">
-        <TableContainer sx={{width: "100%"}}>
-          <Table size="small" sx={{width: "max-content", margin:"auto"}}>
-            <TableHead>
-              <TableRow>
-                <TableCell>
-                  <b>Feature</b>
-                </TableCell>
-                <TableCell>
-                  <b>Minimum Value</b>
-                </TableCell>
-                <TableCell>
-                  <b>Maximum Value</b>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              <TableRow>
-                <TableCell align="left">Bedrooms</TableCell>
-                <TableCell align="left">1</TableCell>
-                <TableCell align="left">7</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell align="left">Bathrooms</TableCell>
-                <TableCell align="left">1</TableCell>
-                <TableCell align="left">5</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell align="left">Levels</TableCell>
-                <TableCell align="left">1</TableCell>
-                <TableCell align="left">4</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
+          <TableContainer sx={{ width: "100%" }}>
+            <Table size="small" sx={{ width: "max-content", margin: "auto" }}>
+              <TableHead>
+                <TableRow>
+                  <TableCell>
+                    <b>Feature</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Minimum Value</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Maximum Value</b>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell align="left">Bedrooms</TableCell>
+                  <TableCell align="left">1</TableCell>
+                  <TableCell align="left">7</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell align="left">Bathrooms</TableCell>
+                  <TableCell align="left">1</TableCell>
+                  <TableCell align="left">5</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell align="left">Levels</TableCell>
+                  <TableCell align="left">1</TableCell>
+                  <TableCell align="left">4</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </TableContainer>
         </div>
 
@@ -360,32 +360,34 @@ function Preprocessing() {
         </div>
 
         <div className="small-table">
-        <TableContainer sx={{width: "100%"}}>
-          <Table size="small" sx={{width: "max-content", margin:"auto"}}>
-            <TableHead>
-              <TableRow>
-                <TableCell>
-                  <b>Location</b>
-                </TableCell>
-                <TableCell>
-                  <b>Mapping</b>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {rows.map((row) => (
+          <TableContainer sx={{ width: "100%" }}>
+            <Table size="small" sx={{ width: "max-content", margin: "auto" }}>
+              <TableHead>
                 <TableRow>
-                  <TableCell align="left">{row.Location}</TableCell>
-                  <TableCell align="left">{row.Mapping}</TableCell>
+                  <TableCell>
+                    <b>Location</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>Mapping</b>
+                  </TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
+              </TableHead>
+              <TableBody>
+                {rows.map((row) => (
+                  <TableRow>
+                    <TableCell align="left">{row.Location}</TableCell>
+                    <TableCell align="left">{row.Mapping}</TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
           </TableContainer>
         </div>
 
         <div className="text">
-          <p></p>
+          <p>To get a better idea of the strategy used, visit Google Maps and search for any combination of locations in the table above. You'll notice that
+            all the pair of location values are very close in distance. You can also notice that values that are already population centers (e.g. Bromont) are mapped to themselves.
+          </p>
         </div>
 
         <div className="text">
@@ -405,69 +407,69 @@ function Preprocessing() {
         </div>
 
         <div className="table small-table">
-        <TableContainer sx={{width: "100%"}}>
-          <Table size="small" sx={{width: "max-content", margin:"auto"}}>
-            <TableHead>
-              <TableRow>
-                <TableCell>
-                  <b>Feature</b>
-                </TableCell>
-                <TableCell>
-                  <b>NaN Replacement Method</b>
-                </TableCell>
-                <TableCell>
-                  <b>NaN Replacement Value</b>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              <TableRow>
-                <TableCell align="left">Subtype</TableCell>
-                <TableCell align="left">Dropped</TableCell>
-                <TableCell align="left">-</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell align="left">Living Area</TableCell>
-                <TableCell align="left">Mean</TableCell>
-                <TableCell align="left">1350 sq. ft</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell align="left">Lot Dimensions</TableCell>
-                <TableCell align="left">Mean</TableCell>
-                <TableCell align="left">7500 sq. ft</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell align="left">Bedrooms</TableCell>
-                <TableCell align="left">Dropped</TableCell>
-                <TableCell align="left">-</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell align="left">Bathrooms</TableCell>
-                <TableCell align="left">Dropped</TableCell>
-                <TableCell align="left">-</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell align="left">Levels</TableCell>
-                <TableCell align="left">Dropped</TableCell>
-                <TableCell align="left">-</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell align="left">Listing Date</TableCell>
-                <TableCell align="left">Dropped</TableCell>
-                <TableCell align="left">-</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell align="left">Year of Construction</TableCell>
-                <TableCell align="left">Mean</TableCell>
-                <TableCell align="left">1992</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell align="left">Price</TableCell>
-                <TableCell align="left">Dropped</TableCell>
-                <TableCell align="left">-</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
+          <TableContainer sx={{ width: "100%" }}>
+            <Table size="small" sx={{ width: "max-content", margin: "auto" }}>
+              <TableHead>
+                <TableRow>
+                  <TableCell>
+                    <b>Feature</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>NaN Replacement Method</b>
+                  </TableCell>
+                  <TableCell>
+                    <b>NaN Replacement Value</b>
+                  </TableCell>
+                </TableRow>
+              </TableHead>
+              <TableBody>
+                <TableRow>
+                  <TableCell align="left">Subtype</TableCell>
+                  <TableCell align="left">Dropped</TableCell>
+                  <TableCell align="left">-</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell align="left">Living Area</TableCell>
+                  <TableCell align="left">Mean</TableCell>
+                  <TableCell align="left">1350 sq. ft</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell align="left">Lot Dimensions</TableCell>
+                  <TableCell align="left">Mean</TableCell>
+                  <TableCell align="left">7500 sq. ft</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell align="left">Bedrooms</TableCell>
+                  <TableCell align="left">Dropped</TableCell>
+                  <TableCell align="left">-</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell align="left">Bathrooms</TableCell>
+                  <TableCell align="left">Dropped</TableCell>
+                  <TableCell align="left">-</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell align="left">Levels</TableCell>
+                  <TableCell align="left">Dropped</TableCell>
+                  <TableCell align="left">-</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell align="left">Listing Date</TableCell>
+                  <TableCell align="left">Dropped</TableCell>
+                  <TableCell align="left">-</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell align="left">Year of Construction</TableCell>
+                  <TableCell align="left">Mean</TableCell>
+                  <TableCell align="left">1992</TableCell>
+                </TableRow>
+                <TableRow>
+                  <TableCell align="left">Price</TableCell>
+                  <TableCell align="left">Dropped</TableCell>
+                  <TableCell align="left">-</TableCell>
+                </TableRow>
+              </TableBody>
+            </Table>
           </TableContainer>
         </div>
       </div>
