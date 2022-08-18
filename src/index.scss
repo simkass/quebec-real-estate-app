@@ -1,5 +1,4 @@
 body {
-  margin: 0;
   font-family: 'Roboto Mono', monospace, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -10,11 +9,17 @@ code {
     monospace;
 }
 
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
 a {
   text-decoration: none;
   color: black;
 }
 
-* {
-  box-sizing: border-box;
+p {
+  font-size: 1rem;
+  line-height: 1.75rem;
 }
