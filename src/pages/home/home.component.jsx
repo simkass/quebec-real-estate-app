@@ -1,6 +1,32 @@
+import { useState, useEffect } from "react";
+
 import "./home.styles.scss";
 
 const Home = () => {
+  // Add event listener
+  const [windowSize, setWindowSize] = useState({
+    width: undefined,
+    height: undefined,
+  });
+
+  useEffect(() => {
+    // Handler to call on window resize
+    function handleResize() {
+      setWindowSize({
+        width: window.innerWidth,
+        height: window.innerHeight,
+      });
+    }
+    window.addEventListener("resize", handleResize);
+
+    // Call handler right away so state gets updated with initial window size
+    handleResize();
+    // Remove event listener on cleanup
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+
+  const isMobile = windowSize.width <= 1000;
+
   return (
     <div className="Home">
       <div className="home">
@@ -9,9 +35,16 @@ const Home = () => {
             <img src={"./assets/pictures/Home.jpg"} />
           </div>
           <div className="home-picture-desc">
-            <p>
-              Home located in Lac-Brome, Quebec - Designed by Thomas Balaban
-            </p>
+            {isMobile ? (
+              <>
+                <p>Home located in Lac-Brome, Quebec</p>
+                <p>Designed by Thomas Balaban</p>
+              </>
+            ) : (
+              <p>
+                Home located in Lac-Brome, Quebec - Designed by Thomas Balaban
+              </p>
+            )}
           </div>
         </div>
         <div className="home-text">
@@ -22,13 +55,12 @@ const Home = () => {
 
           <div>
             <p>
-              By designing a web scraper, I was able to gather information on
-              over 100k sold homes from the past 15 years in Quebec. I then used
-              visualization tools to generate a series of graphs offering a
-              unique insight into Quebec's housing market. Finally, I designed a
-              neural network using Tensorflow. This allowed me to train a model
-              capable of predicting a home's final selling price with a 15%
-              margin of error.
+              By building a web scraper, I was able to gather information on
+              over 100k sold homes from the past 15 years in Quebec. I used this
+              data to generate a series of graphs exposing the most important
+              features for home valuation. Finally, I used Tensorflow to train a
+              neural network that can predict a home's final selling price with
+              a 15% margin of error.
             </p>
           </div>
           <div>
