@@ -17,6 +17,12 @@ code {
 a {
   text-decoration: none;
   color: black;
+  font-weight: bold;
+  transition-duration: 250ms;
+}
+
+a:hover {
+  color: rgb(97, 97, 97);
 }
 
 p {
