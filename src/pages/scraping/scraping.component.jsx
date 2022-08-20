@@ -28,6 +28,25 @@ const Scraping = () => {
           DuProprio. The first script goes through all the pages of listing
           thumbnails and acquires the listings’ individual links.
         </p>
+        <Image
+          path="./assets/screenshots/Thumbnails.png"
+          description="DuProprio Listing Thumbnails."
+        />
+        <p>I obtained individual links as such:</p>
+        <Image
+          path="./assets/screenshots/Links.png"
+          description="DuProprio individual listing links in a .txt file."
+        />
+        <p>
+          The second script goes through all the scraped links and loads them
+          one by one using Beautiful Soup. By reading the HTML tags in the
+          loaded pages, we can scrape the following data points for every
+          listing page.
+        </p>
+        <Image
+          path="./assets/screenshots/Tags.png"
+          description="HTML Tag for number of bedrooms inside listing page."
+        />
       </div>
     </div>
   );
