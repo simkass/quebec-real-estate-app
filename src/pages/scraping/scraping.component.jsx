@@ -1,3 +1,5 @@
+import Image from "../../components/image/image.component";
+
 import "./scraping.styles.scss";
 
 const Scraping = () => {
@@ -12,6 +14,19 @@ const Scraping = () => {
           agent. The data I was interested in was sold homes and condos,
           anywhere in Quebec. Luckily, DuProprio allows users to filter their
           search using these exact criteria.
+        </p>
+        <Image
+          path="./assets/screenshots/Filters.png"
+          description="DuProprio Search Filters."
+        />
+        <p>
+          Using{" "}
+          <a href="https://beautiful-soup-4.readthedocs.io/en/latest/">
+            Beautiful Soup
+          </a>
+          , I was able to build two Python scripts to scrape data from
+          DuProprio. The first script goes through all the pages of listing
+          thumbnails and acquires the listings’ individual links.
         </p>
       </div>
     </div>
