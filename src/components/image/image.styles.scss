@@ -16,3 +16,10 @@
   flex-shrink: 0;
   max-width: 100%;
 }
+
+@media screen and (max-width: 1000px) {
+    .Image {
+        padding-right: 0rem;
+        padding-left: 0rem;
+    }
+}

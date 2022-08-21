@@ -15,3 +15,15 @@
 .scraping h1 {
     margin-bottom: 2rem
 }
+
+@media screen and (max-width: 1000px) {
+    .scraping {
+        width: 100%;
+        padding: 2rem;
+    }
+
+    .scraping h1 {
+        margin-top: 2rem;
+        margin-bottom: 3rem
+    }
+}
