@@ -13,6 +13,12 @@
     "sass": "^1.54.4",
     "web-vitals": "^2.1.4"
   },
+  "devDependencies": {
+    "@svgr/webpack": "^6.2.1"
+  },
+  "overrides": {
+    "@svgr/webpack": "$@svgr/webpack"
+  },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
