@@ -1,8 +1,34 @@
 import Image from "../../components/image/image.component";
+import CsvTable from "../../components/table/table.component";
 
 import "./scraping.styles.scss";
 
 const Scraping = () => {
+  const columns = [
+    "subtype",
+    "living_area",
+    "lot_dimensions",
+    "bedrooms",
+    "bathrooms",
+    "levels",
+    "location",
+    "listing_date",
+    "year_of_construction",
+    "price",
+  ];
+  const columns_display = [
+    "Subtype",
+    "Living Area",
+    "Lot Dimensions",
+    "Bedrooms",
+    "Bathrooms",
+    "Levels",
+    "Location",
+    "Listing Date",
+    "Year of Construction",
+    "Price",
+  ];
+
   return (
     <div className="Scraping">
       <div className="scraping">
@@ -47,6 +73,12 @@ const Scraping = () => {
           path="./assets/screenshots/Tags.png"
           description="HTML Tag for number of bedrooms inside listing page."
         />
+        <p>Here's a sample of the final scraped dataset of listings:</p>
+          <CsvTable
+            filepath="./assets/data/raw_sample.csv"
+            columns={columns}
+            columns_display={columns_display}
+          />
       </div>
     </div>
   );

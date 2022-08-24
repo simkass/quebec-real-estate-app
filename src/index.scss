@@ -1,11 +1,12 @@
 body {
-  font-family: 'Roboto Mono', monospace, sans-serif;
+  font-family: "Roboto Mono", monospace, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: overlay;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
 
@@ -28,4 +29,32 @@ a:hover {
 p {
   font-size: 1rem;
   line-height: 1.75rem;
+}
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(130, 130, 130);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(103, 103, 103);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
 }
