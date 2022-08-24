@@ -1,7 +1,7 @@
 import Image from "../../components/image/image.component";
-import CsvTable from "../../components/table/table.component";
 
 import "./scraping.styles.scss";
+import CsvTable from "../../components/table/table.component";
 
 const Scraping = () => {
   const columns = [
@@ -74,11 +74,11 @@ const Scraping = () => {
           description="HTML Tag for number of bedrooms inside listing page."
         />
         <p>Here's a sample of the final scraped dataset of listings:</p>
-          <CsvTable
-            filepath="./assets/data/raw_sample.csv"
-            columns={columns}
-            columns_display={columns_display}
-          />
+        <CsvTable
+          filepath="./assets/data/raw_sample.csv"
+          columns={columns}
+          columns_display={columns_display}
+        />
       </div>
     </div>
   );
