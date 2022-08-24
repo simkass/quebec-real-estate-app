@@ -1,6 +1,6 @@
-import Image from "../../components/image/image.component";
-
 import "./scraping.styles.scss";
+
+import Image from "../../components/image/image.component";
 import CsvTable from "../../components/table/table.component";
 
 const Scraping = () => {

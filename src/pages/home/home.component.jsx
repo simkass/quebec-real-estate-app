@@ -1,6 +1,6 @@
-import { useState, useEffect } from "react";
-
 import "./home.styles.scss";
+
+import { useEffect, useState } from "react";
 
 const Home = () => {
   // Add event listener
