@@ -1,15 +1,15 @@
+import "./table.styles.scss";
+
 import {
-  TableContainer,
   Table,
   TableBody,
   TableCell,
+  TableContainer,
   TableHead,
   TableRow,
 } from "@mui/material";
 import Papa from "papaparse";
 import React from "react";
-
-import "./table.styles.scss";
 
 const CsvTable = ({ filepath, columns, columns_display }) => {
   const [rawRows, setRows] = React.useState([]);
