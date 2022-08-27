@@ -24,31 +24,33 @@ const CsvTable = ({ filepath, columns, columns_display }) => {
   }, []);
 
   return (
-    <div className="container">
-      <TableContainer sx={{ width: "100%" }}>
-        <Table size="small" sx={{ width: "max-content" }}>
-          <TableHead>
-            <TableRow>
-              {columns_display.map((column) => (
-                <TableCell key={column}>
-                  <b>{column}</b>
-                </TableCell>
-              ))}
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rawRows.map((row, index) => (
-              <TableRow key={index}>
-                {columns.map((column) => (
-                  <TableCell align="left" key={column}>
-                    {row[column]}
+    <div className="Table">
+      <div className="table">
+        <TableContainer sx={{ width: "100%" }}>
+          <Table size="small" sx={{ width: "max-content" }}>
+            <TableHead>
+              <TableRow>
+                {columns_display.map((column) => (
+                  <TableCell key={column}>
+                    <b>{column}</b>
                   </TableCell>
                 ))}
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+            </TableHead>
+            <TableBody>
+              {rawRows.map((row, index) => (
+                <TableRow key={index}>
+                  {columns.map((column) => (
+                    <TableCell align="left" key={column}>
+                      {row[column]}
+                    </TableCell>
+                  ))}
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </div>
     </div>
   );
 };
