@@ -11,3 +11,24 @@
   width: 60%;
   padding: 4rem;
 }
+
+@media screen and (max-width: 1325px) {
+  .preprocessing {
+    width: 100%;
+    padding: 2rem;
+    padding-right: 5rem;
+
+    padding-left: 5rem;
+  }
+
+  .preprocessing h1 {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .preprocessing {
+    padding: 2rem;
+  }
+}

@@ -73,7 +73,7 @@ const Scraping = () => {
           path="./assets/screenshots/Tags.png"
           description="HTML Tag for number of bedrooms inside listing page."
         />
-        <p>Here's a sample of the final scraped dataset of listings:</p>
+        <p>Here's a sample of the final scraped dataset of 169 000 listings:</p>
         <CsvTable
           filepath="./assets/data/raw_sample.csv"
           columns={columns}
