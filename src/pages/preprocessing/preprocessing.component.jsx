@@ -5,6 +5,11 @@ import CsvTable from "../../components/table/table.component";
 
 const Preprocessing = () => {
   const columns = ["Feature", "Minimum Value", "Maximum Value"];
+  const nan_columns = [
+    "Feature",
+    "NaN Replacement Method",
+    "NaN Replacement Value",
+  ];
 
   return (
     <div className="Preprocessing">
@@ -105,6 +110,24 @@ const Preprocessing = () => {
         <Plot
           path="./assets/plots/price-hist.png"
           title="Distribution of values for 'Price' after filtering"
+        />
+        <h2>NaN Values</h2>
+        <p>
+          When they are scarce, rows containing NaN values can be dropped. This
+          way, we avoid reducing the quality of our dataset by sacrificing a
+          small portion of it. However, if dropping these rows reduce
+          considerably the size of our dataset, it might be worth sacrificing
+          its quality instead. To do that, we replace NaN values with ones that
+          accurately represent the rest of the data. This reduces the quality of
+          our dataset because part of the data isn't real anymore, it's
+          estimated using the statistical parameters of the group it belongs to.
+          The following table indicates how NaN values were replaced (or
+          dropped) for every feature.
+        </p>
+        <CsvTable
+          filepath="./assets/data/nans.csv"
+          columns={nan_columns}
+          columns_display={nan_columns}
         />
       </div>
     </div>
