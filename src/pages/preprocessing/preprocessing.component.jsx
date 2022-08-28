@@ -129,6 +129,12 @@ const Preprocessing = () => {
           columns={nan_columns}
           columns_display={nan_columns}
         />
+        <h2>Location</h2>
+        <p>
+          I kept this column for last because it is by far the most complicated
+          one to preprocess. in our dataset, this categorical feature has over
+          1000 unique values.
+        </p>
       </div>
     </div>
   );
