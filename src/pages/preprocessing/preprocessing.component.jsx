@@ -133,7 +133,9 @@ const Preprocessing = () => {
         <p>
           I kept this column for last because it is by far the most complicated
           one to preprocess. in our dataset, this categorical feature has over
-          1000 unique values.
+          1000 unique values. As you can guess, a lot of these locations have
+          very small population and consequently, very few listings. We are
+          therefore facing
         </p>
       </div>
     </div>
