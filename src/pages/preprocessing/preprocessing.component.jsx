@@ -134,8 +134,26 @@ const Preprocessing = () => {
           I kept this column for last because it is by far the most complicated
           one to preprocess. in our dataset, this categorical feature has over
           1000 unique values. As you can guess, a lot of these locations have
-          very small population and consequently, very few listings. We are
-          therefore facing
+          very small population and consequently, very few listings. Let's
+          analyse this further by looking at a distribution graph of the number
+          of listings per location values.
+        </p>
+        <Plot
+          path="./assets/plots/raw-locations-dist.png"
+          title="Distribution of number of listings per locations"
+        />
+        <p>
+          The plot shows quite clearly that over 40% of all location values have
+          less than 100 listings. The distribution plot is so skewed towards
+          small values that I had to use a log scale on the x axis. The
+          conclusion is that we simply can't fix this issue by removing all
+          locations with too few values, this would wipe out almost half of our
+          (already small) dataset. We need another, more creative solution.
+        </p>
+        <br />
+        <p>
+          Before diving into the solution, we need to talk about location
+          granularity.
         </p>
       </div>
     </div>
