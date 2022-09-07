@@ -23,11 +23,22 @@
   display: flex;
 }
 
+.quote {
+  margin: 1rem;
+  margin-right: 8em;
+  margin-left: 8rem;
+}
+
 @media screen and (max-width: 1325px) {
   .preprocessing {
     width: 100%;
     padding-right: 5rem;
     padding-left: 5rem;
+  }
+
+  .quote {
+    margin-right: 0;
+    margin-left: 0;
   }
 }
 

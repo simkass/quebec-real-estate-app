@@ -155,6 +155,31 @@ const Preprocessing = () => {
           Before diving into the solution, we need to talk about location
           granularity.
         </p>
+        <div className="quote">
+          <p>
+            <a href="https://www.chemeurope.com/en/encyclopedia/Granularity.html">
+              "Granularity is the relative size, scale, level of detail or depth
+              of penetration that characterizes an object"
+            </a>
+          </p>
+        </div>
+        <p>
+          For location values, granularity refers to the specificity of the
+          geographical boundary being represented. For example, when locating
+          your home, stating the full civic address is far more specific than
+          just mentionning the city or even the state. In our case, all of our
+          160k+ listings are contained within the province of Quebec. Quebec is
+          therefore our least granular geographical boundary. The most granular
+          values are all the individual home addresses which can only contain 1
+          listing. Note that this is theoretical as we did not actually scrape
+          the individual addresses.
+        </p>
+        <br />
+        <p>
+          Our solution will be to adjust the granularity of all our unique
+          location values to end up with fewer possibilities that all have a
+          similar weight (amount of listings).
+        </p>
       </div>
     </div>
   );

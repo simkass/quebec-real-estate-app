@@ -6,7 +6,8 @@ body {
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
 }
 
 * {
@@ -21,6 +22,11 @@ h1 {
 h2 {
   margin-top: 2rem;
   margin-bottom: 1rem;
+}
+
+h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
 }
 
 a {
