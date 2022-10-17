@@ -1,0 +1,5 @@
+Granularity Level,Name,Examples,Typical Population Size
+0,Province,Québec,8M
+1,Administrative Region,"Centre-du-Québec, Montérégie, Estrie, etc.",400k to 2M
+2,Regional County Municipality,"Brome-Missisquoi, La Haute-Yamaska, etc.",100k to 250k
+3,Municipality,"Granby, Victoriaville, Dorval, etc.",10k to 60k

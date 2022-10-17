@@ -155,6 +155,7 @@ const Preprocessing = () => {
           Before diving into the solution, we need to talk about location
           granularity.
         </p>
+        <h3>Location Granularity</h3>
         <div className="quote">
           <p>
             <a href="https://www.chemeurope.com/en/encyclopedia/Granularity.html">
@@ -167,19 +168,72 @@ const Preprocessing = () => {
           For location values, granularity refers to the specificity of the
           geographical boundary being represented. For example, when locating
           your home, stating the full civic address is far more specific than
-          just mentionning the city or even the state. In our case, all of our
-          160k+ listings are contained within the province of Quebec. Quebec is
-          therefore our least granular geographical boundary. The most granular
-          values are all the individual home addresses which can only contain 1
-          listing. Note that this is theoretical as we did not actually scrape
-          the individual addresses.
+          just mentionning the city or even the state.
         </p>
+        <br />
+        <p>
+          In our case, all of our 160k+ listings are contained within the
+          province of Quebec. Quebec is therefore our least granular
+          geographical boundary. The most granular values are all the individual
+          home addresses which can only contain 1 listing. Note that this is
+          theoretical as we did not actually scrape the individual addresses.
+        </p>
+        <CsvTable
+          filepath="./assets/data/granularities.csv"
+          columns={[
+            "Granularity Level",
+            "Name",
+            "Examples",
+            "Typical Population Size",
+          ]}
+          columns_display={[
+            "Granularity Level",
+            "Name",
+            "Examples",
+            "Typical Population Size",
+          ]}
+        />
         <br />
         <p>
           Our solution will be to adjust the granularity of all our unique
           location values to end up with fewer possibilities that all have a
-          similar weight (amount of listings).
+          similar weight (amount of listings). This will help us get a more even
+          distribution of number of listings per locations.
         </p>
+        <h3>The Solution</h3>
+        <p>
+          The first step of our solution is to define the list of possible
+          locations. When combined, the chosen locations must cover the entire
+          territory of Quebec. To maintain an even distribution of listings per
+          location, we will ajust the granularities depending on population
+          density (the amount of listings is heavily correlated with population
+          number). For example, location values in the Montreal area are going
+          to be more granular than in the region of Bas-Saint-Laurent since the
+          former has a higher population density than the latter.
+        </p>
+        <h4>List of possible locations</h4>
+        <p>
+          Defining the list of possible locations required a lot of trial and
+          error to get a relatively even number of listings per location. In the
+          end, I used a combination of{" "}
+          <a href="https://en.wikipedia.org/wiki/List_of_regions_of_Quebec">
+            Administrative Regions
+          </a>
+          ,{" "}
+          <a href="https://en.wikipedia.org/wiki/List_of_regional_county_municipalities_and_equivalent_territories_in_Quebec">
+            Regional County Municipalities
+          </a>
+          , and{" "}
+          <a href="https://en.wikipedia.org/wiki/List_of_boroughs_in_Quebec">
+            Boroughs
+          </a>{" "}
+          to obtain a list of 112 locations which is a 90% decrease from our
+          original 1171 unique locations. This significant decrease in the
+          number of possible values should help our eventual model's accuracy.
+          The next and final step is to map the original scraped values to the
+          ones in our new list of 112 locations.
+        </p>
+        <h4>Mapping original locations</h4>
       </div>
     </div>
   );
