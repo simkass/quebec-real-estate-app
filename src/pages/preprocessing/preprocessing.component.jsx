@@ -1,5 +1,6 @@
 import "./preprocessing.styles.scss";
 
+import Image from "../../components/image/image.component";
 import Plot from "../../components/plot/plot.component";
 import CsvTable from "../../components/table/table.component";
 
@@ -9,6 +10,21 @@ const Preprocessing = () => {
     "Feature",
     "NaN Replacement Method",
     "NaN Replacement Value",
+  ];
+  const processed_columns = [
+    "Subtype",
+    "Style",
+    "Living Area",
+    "Lot Dimensions",
+    "Bedrooms",
+    "Bathrooms",
+    "Levels",
+    "Listing Date",
+    "Listing Year",
+    "Year of Construction",
+    "Age",
+    "Location",
+    "Price",
   ];
 
   return (
@@ -234,6 +250,38 @@ const Preprocessing = () => {
           ones in our new list of 112 locations.
         </p>
         <h4>Mapping original locations</h4>
+        <p>
+          To map the original 1171 locations to the ones in our curated list, we
+          must first compute the geographical coordinates of our original
+          locations and the geographical boundaries of our curated locations.
+          Then, we go through all the geographical coordinates and find the
+          boundary they belong to. For example, one of our original location is
+          the city of Bromont. Its geographical coordinates are 45.2852° N,
+          72.6872° W
+        </p>
+        <Image
+          path="./assets/screenshots/Bromont.png"
+          description="Bromont Geographical Coordinates Point."
+        />
+        <p>
+          By testing with the boundaries in our curated list, we find that
+          Bromont belongs to the regional county of Brome-Mississquoi. Its
+          boundary is shown below.
+        </p>
+        <Image
+          path="./assets/screenshots/Bromont2.png"
+          description="Bromont Geographical Coordinates Point inside of Brome-Mississquoi."
+        />
+        <h2>Final Dataset</h2>
+        <p>
+          After all these preprocessing operations, we are left with a final
+          dataset of 88,962 listings. Here's a sample...
+        </p>
+        <CsvTable
+          filepath="./assets/data/processed_sample.csv"
+          columns={processed_columns}
+          columns_display={processed_columns}
+        />
       </div>
     </div>
   );
