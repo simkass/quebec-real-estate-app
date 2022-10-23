@@ -1,6 +1,7 @@
 import Home from './pages/home/home.component';
 import Preprocessing from './pages/preprocessing/preprocessing.component';
 import Scraping from './pages/scraping/scraping.component'
+import Training from './pages/training/training.component'
 import Visualization from './pages/visualization/visualization.component'
 
 const App = () => {
@@ -10,6 +11,7 @@ const App = () => {
       <Scraping/>
       <Preprocessing/>
       <Visualization/>
+      <Training/>
     </div>
   );
 }
