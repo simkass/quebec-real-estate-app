@@ -96,6 +96,18 @@ const Visualization = () => {
         </p>
         <Plot path="./assets/visualization/subtype-barplot.png" title="" />
         <h2>Location</h2>
+        <div className="title">
+          <p>Average Selling Price by Area</p>
+        </div>
+
+        <div className="iframe">
+          <iframe
+            src="./assets/choropleth_map.html"
+            height="100%"
+            width="100%"
+            frameBorder="0"
+          ></iframe>
+        </div>
       </div>
     </div>
   );

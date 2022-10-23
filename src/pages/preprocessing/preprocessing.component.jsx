@@ -282,6 +282,8 @@ const Preprocessing = () => {
           columns={processed_columns}
           columns_display={processed_columns}
         />
+        <br></br>
+        <p>It's now time to visualize the data.</p>
       </div>
     </div>
   );
