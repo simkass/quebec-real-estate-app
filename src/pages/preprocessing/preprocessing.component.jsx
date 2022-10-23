@@ -20,7 +20,6 @@ const Preprocessing = () => {
     "Levels",
     "Listing Date",
     "Listing Year",
-    "Year of Construction",
     "Age",
     "Location",
     "Price",
@@ -111,6 +110,17 @@ const Preprocessing = () => {
         <Plot
           path="./assets/plots/year-of-construction-hist.png"
           title="Distribution of values for 'Year of Construction' after filtering"
+        />
+        <p>
+          Finally, we substract the listing year by the year of construction to
+          get an Age column. This is because the year of construction has
+          different impact depending on the year the house is sold. Indeed, a
+          house built in 2010 and listed in 2010 will sell differently than if
+          it was listed in 2020. Here's the age distribution.
+        </p>
+        <Plot
+          path="./assets/plots/age-hist.png"
+          title="Distribution of values for 'Age' after filtering"
         />
         <h2>Price</h2>
         <p>

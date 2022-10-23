@@ -17,7 +17,6 @@ const Training = () => {
     "Levels",
     "Listing Date",
     "Listing Year",
-    "Year of Construction",
     "Age",
     "Price",
   ];
@@ -58,11 +57,13 @@ const Training = () => {
           columns_display={columns}
           white_text={true}
         />
+        <br></br>
         <p>
           The full dataset would have many more columns since we have 111
           possible location values. You can also imagine what the dataset would
           look like after encoding the Subtype column.
         </p>
+        <h2>Normalizing numerical values.</h2>
       </div>
     </div>
   );
