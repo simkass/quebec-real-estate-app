@@ -3,7 +3,7 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background: rgb(46, 46, 46);
+    background: rgb(24, 24, 24);
     color: white;
     padding-top: 3rem;
     padding-bottom: 3rem;
@@ -12,6 +12,17 @@
 .training {
     width: 60%;
     padding: 2rem;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition-duration: 250ms;
+}
+
+a:hover {
+    color: rgb(189, 189, 189);
 }
 
 @media screen and (max-width: 1325px) {

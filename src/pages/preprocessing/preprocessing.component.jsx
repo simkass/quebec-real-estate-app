@@ -13,7 +13,6 @@ const Preprocessing = () => {
   ];
   const processed_columns = [
     "Subtype",
-    "Style",
     "Living Area",
     "Lot Dimensions",
     "Bedrooms",

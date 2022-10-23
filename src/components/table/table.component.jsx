@@ -11,7 +11,12 @@ import {
 import Papa from "papaparse";
 import React from "react";
 
-const CsvTable = ({ filepath, columns, columns_display }) => {
+const CsvTable = ({
+  filepath,
+  columns,
+  columns_display,
+  white_text = false,
+}) => {
   const [rawRows, setRows] = React.useState([]);
   React.useEffect(() => {
     Papa.parse(filepath, {
@@ -23,6 +28,8 @@ const CsvTable = ({ filepath, columns, columns_display }) => {
     });
   }, []);
 
+  var cellClassname = white_text ? "white_cell" : "cell";
+
   return (
     <div className="Table">
       <div className="table">
@@ -32,7 +39,9 @@ const CsvTable = ({ filepath, columns, columns_display }) => {
               <TableRow>
                 {columns_display.map((column) => (
                   <TableCell key={column}>
-                    <b>{column}</b>
+                    <p className={cellClassname}>
+                      <b>{column}</b>
+                    </p>
                   </TableCell>
                 ))}
               </TableRow>
@@ -42,7 +51,7 @@ const CsvTable = ({ filepath, columns, columns_display }) => {
                 <TableRow key={index}>
                   {columns.map((column) => (
                     <TableCell align="left" key={column}>
-                      {row[column]}
+                      <p className={cellClassname}>{row[column]}</p>
                     </TableCell>
                   ))}
                 </TableRow>
