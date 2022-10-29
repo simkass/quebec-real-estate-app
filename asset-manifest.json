@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/quebec-real-estate-app/static/css/main.2e176349.css",
+    "main.js": "/quebec-real-estate-app/static/js/main.513b7c44.js",
+    "index.html": "/quebec-real-estate-app/index.html",
+    "main.2e176349.css.map": "/quebec-real-estate-app/static/css/main.2e176349.css.map",
+    "main.513b7c44.js.map": "/quebec-real-estate-app/static/js/main.513b7c44.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2e176349.css",
+    "static/js/main.513b7c44.js"
+  ]
+}
