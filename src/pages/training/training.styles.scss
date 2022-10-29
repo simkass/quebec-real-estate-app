@@ -15,10 +15,10 @@
 }
 
 .code-block {
+    width: calc(100% - 20rem);
     margin-top: 1rem;
     margin-bottom: 1rem;
     margin-left: 10rem;
-    display: flex;
 }
 
 @media screen and (max-width: 1325px) {
@@ -29,6 +29,7 @@
     }
 
     .code-block {
+        width: calc(100% - 6rem);
         margin-left: 3rem;
     }
 }
@@ -40,6 +41,7 @@
     }
 
     .code-block {
+        width: calc(100% - 0rem);
         margin-left: 0rem;
     }
 }

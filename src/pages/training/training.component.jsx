@@ -3,6 +3,7 @@ import "./training.styles.scss";
 import SyntaxHighlighter from "react-syntax-highlighter";
 import { stackoverflowLight } from "react-syntax-highlighter/dist/esm/styles/hljs";
 
+import Plot from "../../components/plot/plot.component";
 import CsvTable from "../../components/table/table.component";
 
 const Training = () => {
@@ -41,6 +42,12 @@ const Training = () => {
 
   const outputLayerCode = "model.add(Dense(1, activation= 'linear'))";
 
+  const compileCode =
+    "model.compile(optimizer=Adam(), loss='mean_squared_error')";
+
+  const trainingCode =
+    "history = model.fit(X_train, y_train, batch_size=80000, epochs=500, validation_data=(X_test, y_test))";
+
   return (
     <div className="Training">
       <div className="training">
@@ -62,7 +69,7 @@ const Training = () => {
           </a>
           .
         </p>
-        <br></br>
+        <br />
         <p>
           The columns we need to encode are <b>Subtype</b> and <b>Location</b>.
           The possible values for these features have no logical order, we don't
@@ -76,7 +83,7 @@ const Training = () => {
           columns={columns}
           columns_display={columns}
         />
-        <br></br>
+        <br />
         <p>
           The full dataset would have many more columns since we have 111
           possible location values. You can also imagine what the dataset would
@@ -92,7 +99,7 @@ const Training = () => {
           </a>{" "}
           for a deeper explanation).
         </p>
-        <br></br>
+        <br />
         <p>
           Here's what the dataset would like after standardizing our numerical
           values to a scale of 0 to 1. (Encoded columns are removed to improve
@@ -103,7 +110,7 @@ const Training = () => {
           columns={scaled_columns}
           columns_display={scaled_columns}
         />
-        <br></br>
+        <br />
         <h2>Designing the Neural Network.</h2>
         <p>
           After all the steps of gathering, cleaning, encoding and scaling our
@@ -188,8 +195,58 @@ const Training = () => {
           </SyntaxHighlighter>
         </div>
         <h3>Compiling</h3>
+        <p>
+          We compile the model with an Adam optimizer and a mean squared error
+          loss function.
+        </p>
+        <div className="code-block">
+          <SyntaxHighlighter
+            language="python"
+            showLineNumbers={true}
+            startingLineNumber={9}
+            style={stackoverflowLight}
+          >
+            {compileCode}
+          </SyntaxHighlighter>
+        </div>
         <h3>Training</h3>
+        <p>
+          Picking the right settings to train the model was once again a trial
+          and error process. I first started with a batch size of around 5% of
+          my data. This resulted in a model that would overfit the training
+          data. I increased it gradually to avoid this issue and found that
+          80,000 gave the best results.
+        </p>
+        <br />
+        <p>
+          For the number of epochs, I noticed there wasn't really any point in
+          going over 500, the model peaked as you can see in the training
+          history figure below.
+        </p>
+        <br />
+        <p>
+          Finally, the validation data (X_test and y_test) are about 20% of the
+          entire dataset chosen at random. The training data is the other 80%.
+        </p>
+        <div className="code-block">
+          <SyntaxHighlighter
+            language="python"
+            showLineNumbers={true}
+            startingLineNumber={10}
+            style={stackoverflowLight}
+          >
+            {trainingCode}
+          </SyntaxHighlighter>
+        </div>
         <h3>Results</h3>
+        <p>
+          The following plot shows how the loss on the training data compares to
+          the loss on the validation data. You can see how after 400 epochs the
+          validation loss stops decreasing in comparison to the training loss.
+          This means that the model is starting to overfit on the training data
+          and its time to stop training.
+        </p>
+        <Plot path="./assets/plots/training.png" title="Training history" />
         <h3>Conclusion</h3>
       </div>
     </div>
