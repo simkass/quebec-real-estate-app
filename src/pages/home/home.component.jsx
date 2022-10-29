@@ -52,6 +52,7 @@ const Home = () => {
           <div>
             <h1>Quebec —</h1>
             <h1>Housing Market Analysis</h1>
+            <br />
             <a
               href="https://github.com/simkass/quebec-real-estate-analysis"
               target="_blank"
