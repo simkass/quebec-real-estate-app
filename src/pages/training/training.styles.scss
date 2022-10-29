@@ -3,8 +3,8 @@
     width: 100%;
     display: flex;
     justify-content: center;
-    background: rgb(24, 24, 24);
-    color: white;
+    background: rgb(251, 251, 251);
+    color: rgb(0, 0, 0);
     padding-top: 3rem;
     padding-bottom: 3rem;
 }
@@ -14,15 +14,11 @@
     padding: 2rem;
 }
 
-a {
-    text-decoration: none;
-    color: white;
-    font-weight: bold;
-    transition-duration: 250ms;
-}
-
-a:hover {
-    color: rgb(189, 189, 189);
+.code-block {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 10rem;
+    display: flex;
 }
 
 @media screen and (max-width: 1325px) {
@@ -31,11 +27,19 @@ a:hover {
         padding-right: 5rem;
         padding-left: 5rem;
     }
+
+    .code-block {
+        margin-left: 3rem;
+    }
 }
 
 @media screen and (max-width: 1000px) {
     .training {
         padding-right: 2rem;
         padding-left: 2rem;
+    }
+
+    .code-block {
+        margin-left: 0rem;
     }
 }
