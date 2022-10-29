@@ -1,0 +1,26 @@
+.Plot {
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.plot {
+    text-align: center;
+}
+
+.plot p {
+    padding: 0.25rem;
+}
+
+.plot img {
+    flex-shrink: 0;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 1325px) {
+    .Plot {
+        padding-right: 0rem;
+        padding-left: 0rem;
+    }
+}

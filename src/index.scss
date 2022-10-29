@@ -1,0 +1,79 @@
+body {
+  font-family: "Roboto Mono", monospace, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: overlay;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+  caret-color: transparent;
+}
+
+h1 {
+  margin-bottom: 2rem;
+}
+
+h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+h3 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+h4 {
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition-duration: 250ms;
+}
+
+a:hover {
+  color: rgb(97, 97, 97);
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 2rem;
+}
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+  width: 11px;
+  height: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgb(130, 130, 130);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(103, 103, 103);
+  border-radius: 10px;
+  border: 3px solid transparent;
+  background-clip: content-box;
+}

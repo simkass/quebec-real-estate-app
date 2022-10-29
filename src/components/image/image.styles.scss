@@ -1,0 +1,25 @@
+.Image {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.image {
+  text-align: center;
+}
+
+.image p {
+  padding: 0.25rem;
+}
+
+.image img {
+  flex-shrink: 0;
+  max-width: 100%;
+}
+
+@media screen and (max-width: 1325px) {
+  .Image {
+    padding-right: 0rem;
+    padding-left: 0rem;
+  }
+}

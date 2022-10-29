@@ -1,0 +1,50 @@
+.Preprocessing {
+  height: fit-content;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(255, 251, 247);
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.preprocessing {
+  width: 60%;
+  padding: 2rem;
+}
+
+.list {
+  padding-top: 2rem;
+  text-align: center;
+  font-weight: bold;
+}
+
+.two-plots {
+  display: flex;
+}
+
+.quote {
+  margin: 2rem;
+  margin-right: 8em;
+  margin-left: 8rem;
+}
+
+@media screen and (max-width: 1325px) {
+  .preprocessing {
+    width: 100%;
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
+
+  .quote {
+    margin-right: 0;
+    margin-left: 0;
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .preprocessing {
+    padding-right: 2rem;
+    padding-left: 2rem;
+  }
+}
