@@ -18,7 +18,6 @@ const Preprocessing = () => {
     "Bedrooms",
     "Bathrooms",
     "Levels",
-    "Listing Date",
     "Listing Year",
     "Age",
     "Location",
