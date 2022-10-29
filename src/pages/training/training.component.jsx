@@ -270,7 +270,24 @@ const Training = () => {
           columns={resultsColumns}
           columns_display={resultsColumns}
         />
+        <br />
+        <p>
+          As we can see from this sample, some predictions are very close to
+          reality, others differ slightly and a few are way off. if compute the
+          mean prediction error (difference between real and predicted price),
+          we see that our model's predictions are on average 38,913$ off the
+          real selling price. That is significant! It's about 14.9% of the
+          average home selling price. Another thing we can compute is the
+          standard deviation of prediction errors which is 42,502$ or around
+          18.5%. This tells us that our model is quite inconsistent, it
+          sometimes predicts very well and other times it heavily misses the
+          mark.
+        </p>
         <h3>Conclusion</h3>
+        <p>
+          My hypothesis for the reason behind this poor performance is that we
+          simply don't have enough data.
+        </p>
       </div>
     </div>
   );

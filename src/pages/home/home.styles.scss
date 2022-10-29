@@ -61,6 +61,19 @@
   width: 100%;
 }
 
+.github {
+  height: 4rem;
+  display: inline-flex;
+  align-items: center;
+  text-align: center;
+}
+
+.github b {
+  line-height: 1rem;
+  font-size: 1.2rem;
+  margin-left: 0.4rem;
+}
+
 @media screen and (max-width: 1325px) {
   .Home {
     height: fit-content;

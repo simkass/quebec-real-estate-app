@@ -1,6 +1,7 @@
 import "./home.styles.scss";
 
 import { useEffect, useState } from "react";
+import { FaGithub } from "react-icons/fa";
 
 const Home = () => {
   // Add event listener
@@ -51,16 +52,25 @@ const Home = () => {
           <div>
             <h1>Quebec —</h1>
             <h1>Housing Market Analysis</h1>
+            <a
+              href="https://github.com/simkass/quebec-real-estate-analysis"
+              target="_blank"
+            >
+              <div className="github">
+                <FaGithub size={20} />
+                <b>GitHub</b>
+              </div>
+            </a>
           </div>
 
           <div>
             <p>
               By building a web scraper, I was able to gather information on
-              over 100k sold homes from the past 15 years in Quebec. I used this
-              data to generate a series of graphs exposing the most important
-              features for home valuation. Finally, I used Tensorflow to train a
-              neural network that can predict a home's final selling price with
-              a 15% margin of error.
+              nearly 100k sold homes from the past 15 years in Quebec. I used
+              this data to generate a series of graphs exposing the most
+              important features for home valuation. Finally, I used Keras to
+              train a neural network that can predict a home's final selling
+              price with a 15% margin of error.
             </p>
           </div>
           <div>
