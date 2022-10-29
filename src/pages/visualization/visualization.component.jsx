@@ -29,7 +29,7 @@ const Visualization = () => {
         <Plot path="./assets/visualization/livingarea-barplot.png" title="" />
         <h2>Lot Dimensions</h2>
         <p>
-          With the same regression plot, we cannot come to the same conclusion
+          With a similar regression plot, we cannot come to the same conclusion
           for Lot Dimensions. This validates the almost null correlation value
           we saw in the correlation heat map earlier.
         </p>
@@ -51,13 +51,12 @@ const Visualization = () => {
         <h2>Bathrooms</h2>
         <p>
           A simple bar plot can show the relationship between Price and number
-          of bathrooms.
+          of bathrooms. We can conclude that there is significant correlation
+          between the two.
         </p>
         <Plot path="./assets/visualization/bathrooms-barplot.png" title="" />
         <h2>Levels</h2>
-        <p>
-          We can come to a similar conclusion with the same plot for Levels.
-        </p>
+        <p>Unfortunetaly, We can't come to a similar conclusion for Levels.</p>
         <Plot path="./assets/visualization/levels-barplot.png" title="" />
         <h2>Listing Year</h2>
         <p>
@@ -92,10 +91,15 @@ const Visualization = () => {
         <p>
           The following bar plot displays the mean value of a home for different
           subtypes. We can conclude that the subtype of a home has a significant
-          impact on its value.
+          impact on its value. Particulary split level homes and 2 story houses.
         </p>
         <Plot path="./assets/visualization/subtype-barplot.png" title="" />
         <h2>Location</h2>
+        <p>
+          This interactive map shows the average selling price of homes in all
+          the unique locations of our dataset.
+        </p>
+        <br />
         <div className="title">
           <p>Average Selling Price by Area</p>
         </div>
