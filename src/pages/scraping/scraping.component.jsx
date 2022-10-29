@@ -18,15 +18,15 @@ const Scraping = () => {
   ];
   const columns_display = [
     "Subtype",
-    "Living Area",
-    "Lot Dimensions",
+    "Living Area (sq.ft)",
+    "Lot Dimensions (sq.ft)",
     "Bedrooms",
     "Bathrooms",
     "Levels",
     "Location",
     "Listing Date",
     "Year of Construction",
-    "Price",
+    "Price ($)",
   ];
 
   return (
@@ -36,10 +36,10 @@ const Scraping = () => {
         <p>
           In Quebec, the only website (I could find) that openly exposes data on
           sold houses is <a href="https://duproprio.com/en">DuProprio</a>. This
-          website allows homeowners to sell their houses without the use of an
-          agent. The data I was interested in was sold homes and condos,
-          anywhere in Quebec. Luckily, DuProprio allows users to filter their
-          search using these exact criteria.
+          website allows you to sell your home without the use of an agent. I
+          was interested in acquiring data on sold homes and condos, anywhere in
+          Quebec. Luckily, DuProprio allows users to filter their search using
+          these exact criteria.
         </p>
         <Image
           path="./assets/screenshots/Filters.png"
@@ -66,14 +66,13 @@ const Scraping = () => {
         <p>
           The second script goes through all the scraped links and loads them
           one by one using Beautiful Soup. By reading the HTML tags in the
-          loaded pages, we can scrape the following data points for every
-          listing page.
+          loaded pages, we can scrape select data points for every listing page.
         </p>
         <Image
           path="./assets/screenshots/Tags.png"
           description="HTML Tag for number of bedrooms inside listing page."
         />
-        <p>Here's a sample of the final scraped dataset of 169 000 listings:</p>
+        <p>Here's a sample of the final scraped dataset of 128,215 listings:</p>
         <CsvTable
           filepath="./assets/data/raw_sample.csv"
           columns={columns}

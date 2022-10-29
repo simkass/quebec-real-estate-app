@@ -63,11 +63,12 @@ const Preprocessing = () => {
         />
         <p>
           This histogram clearly shows that most residential units have a living
-          area between 500 and 4000 square feet. This is in line with the{" "}
+          area between 500 and 5000 square feet. This is in line with the{" "}
           <a href="https://paradisedevelopments.com/blog/communities/average-house-size-in-canada/?doing_wp_cron=1661624241.1905450820922851562500">
             typical living area of Canadian homes.
           </a>{" "}
-          After adjusting the interval of values for lot dimensions in a similar
+          We will therefore limit this feature to this specific range. After
+          adjusting the interval of values for lot dimensions in a similar
           fashion, we get the following histograms.
         </p>
         <div className="two-plots">
@@ -96,8 +97,11 @@ const Preprocessing = () => {
         <h2>Listing Date</h2>
         <p>
           Listing dates were scraped in a YYYYMM format. They were simply
-          transformed into Datetime objects with the day set to the first of the
-          month.
+          transformed into{" "}
+          <a href="https://docs.python.org/3/library/datetime.html">
+            Datetime objects
+          </a>{" "}
+          with the day set to the first of the month.
         </p>
         <h2>Year of Construction</h2>
         <p>
@@ -115,7 +119,7 @@ const Preprocessing = () => {
           get an Age column. This is because the year of construction has
           different impact depending on the year the house is sold. Indeed, a
           house built in 2010 and listed in 2010 will sell differently than if
-          it was listed in 2020. Here's the age distribution.
+          it was listed in 2020. Here's the final age distribution.
         </p>
         <Plot
           path="./assets/plots/age-hist.png"
@@ -124,7 +128,7 @@ const Preprocessing = () => {
         <h2>Price</h2>
         <p>
           Price is the label of our dataset. Obviously, a row without a price is
-          useless and is therefore dropped. Further more, our dataset include a
+          useless and is therefore dropped. Further more, our dataset includes a
           few very low price homes and a few very high priced homes. Similarly
           to what we did with lot dimensions and living areas, we limit our
           price values to a specific interval based on our calculated
@@ -143,10 +147,9 @@ const Preprocessing = () => {
           considerably the size of our dataset, it might be worth sacrificing
           its quality instead. To do that, we replace NaN values with ones that
           accurately represent the rest of the data. This reduces the quality of
-          our dataset because part of the data isn't real anymore, it's
-          estimated using the statistical parameters of the group it belongs to.
-          The following table indicates how NaN values were replaced (or
-          dropped) for every feature.
+          our dataset because part of the data isn't real anymore. The following
+          table indicates how NaN values were replaced (or dropped) for every
+          feature.
         </p>
         <CsvTable
           filepath="./assets/data/nans.csv"
@@ -156,9 +159,9 @@ const Preprocessing = () => {
         <h2>Location</h2>
         <p>
           I kept this column for last because it is by far the most complicated
-          one to preprocess. in our dataset, this categorical feature has over
-          1000 unique values. As you can guess, a lot of these locations have
-          very small population and consequently, very few listings. Let's
+          one to preprocess. in our dataset, this categorical feature has over a
+          thousand unique values. As you can guess, a lot of these locations
+          have very small population and consequently, very few listings. Let's
           analyse this further by looking at a distribution graph of the number
           of listings per location values.
         </p>
@@ -167,12 +170,12 @@ const Preprocessing = () => {
           title="Distribution of number of listings per locations"
         />
         <p>
-          The plot shows quite clearly that over 40% of all location values have
-          less than 100 listings. The distribution plot is so skewed towards
-          small values that I had to use a log scale on the x axis. The
-          conclusion is that we simply can't fix this issue by removing all
-          locations with too few values, this would wipe out almost half of our
-          (already small) dataset. We need another, more creative solution.
+          The plot clearly shows that over 40% of all location values have less
+          than 100 listings. The distribution plot is so skewed towards small
+          values that I had to use a log scale on the x axis. The conclusion is
+          that we simply can't fix this issue by removing all locations with too
+          few values, this would wipe out almost half of our (already small)
+          dataset. We need another, more creative solution.
         </p>
         <br />
         <p>
@@ -196,11 +199,12 @@ const Preprocessing = () => {
         </p>
         <br />
         <p>
-          In our case, all of our 160k+ listings are contained within the
-          province of Quebec. Quebec is therefore our least granular
-          geographical boundary. The most granular values are all the individual
-          home addresses which can only contain 1 listing. Note that this is
-          theoretical as we did not actually scrape the individual addresses.
+          In our case, all our listings are contained within the province of
+          Quebec. Quebec is therefore our least granular geographical boundary.
+          The most granular values are all the individual home addresses which
+          can only contain 1 listing. Note that this is theoretical as we did
+          not actually scrape the individual addresses. The following table
+          displays different levels of geographical granularity in Quebec.
         </p>
         <CsvTable
           filepath="./assets/data/granularities.csv"
@@ -217,7 +221,6 @@ const Preprocessing = () => {
             "Typical Population Size",
           ]}
         />
-        <br />
         <p>
           Our solution will be to adjust the granularity of all our unique
           location values to end up with fewer possibilities that all have a
@@ -226,14 +229,14 @@ const Preprocessing = () => {
         </p>
         <h3>The Solution</h3>
         <p>
-          The first step of our solution is to define the list of possible
-          locations. When combined, the chosen locations must cover the entire
-          territory of Quebec. To maintain an even distribution of listings per
-          location, we will ajust the granularities depending on population
-          density (the amount of listings is heavily correlated with population
-          number). For example, location values in the Montreal area are going
-          to be more granular than in the region of Bas-Saint-Laurent since the
-          former has a higher population density than the latter.
+          The first step is to define the list of possible locations. When
+          combined, the chosen locations must cover the entire territory of
+          Quebec. To maintain an even distribution of listings per location, we
+          will ajust the granularities depending on population density (the
+          amount of listings is heavily correlated with population number). For
+          example, location values in the Montreal area are going to be more
+          granular than in the region of Bas-Saint-Laurent since the former has
+          a higher population density than the latter.
         </p>
         <h4>List of possible locations</h4>
         <p>
@@ -251,11 +254,11 @@ const Preprocessing = () => {
           <a href="https://en.wikipedia.org/wiki/List_of_boroughs_in_Quebec">
             Boroughs
           </a>{" "}
-          to obtain a list of 112 locations which is a 90% decrease from our
+          to obtain a list of 112 locations. This is a 90% decrease from our
           original 1171 unique locations. This significant decrease in the
-          number of possible values should help our eventual model's accuracy.
-          The next and final step is to map the original scraped values to the
-          ones in our new list of 112 locations.
+          number of possible values should help us obtain a more accurate
+          prediction model later on. The next and final step is to map the
+          original scraped values to the ones in our new list of 112 locations.
         </p>
         <h4>Mapping original locations</h4>
         <p>
@@ -283,7 +286,7 @@ const Preprocessing = () => {
         <h2>Final Dataset</h2>
         <p>
           After all these preprocessing operations, we are left with a final
-          dataset of 88,962 listings. Here's a sample...
+          dataset of 94,639 listings. Here's a sample...
         </p>
         <CsvTable
           filepath="./assets/data/processed_sample.csv"
