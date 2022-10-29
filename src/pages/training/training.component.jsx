@@ -66,16 +66,13 @@ const Training = () => {
     <div className="Training">
       <div className="training">
         <h1>Training the Model.</h1>
-        <p>
-          The first step of training a model is to encode and normalize our
-          data.
-        </p>
+        <p>Before training the model, we need to encode and scale our data.</p>
         <h2>Encoding non numerical values.</h2>
         <p>
           Encoding is the process of converting information into a unique code.
           When encoding, we maitain a coding table that maps the possible inputs
           to their corresponding codes. In our case, the goal is to take inputs
-          that a neural network cannot read (i.e. our categorical string data)
+          that a neural network can't read (i.e. our categorical string data)
           and encode them into numerical values which we can feed to our
           network. There are many forms of encoding which are well summarized in{" "}
           <a href="https://towardsdatascience.com/6-ways-to-encode-features-for-machine-learning-algorithms-21593f6238b0">
@@ -88,7 +85,8 @@ const Training = () => {
           The columns we need to encode are <b>Subtype</b> and <b>Location</b>.
           The possible values for these features have no logical order, we don't
           want to give a higher numerical code to one value rather than the
-          other. By that logic, the optimal method is One-Hot Encoding. Here's a
+          other. By that logic, the optimal method is One-Hot Encoding where
+          every category has its own column filled with boolean values. Here's a
           sample of what the dataset will look like after encoding location
           values.
         </p>
@@ -191,9 +189,9 @@ const Training = () => {
         </div>
         <h3>Output Layer</h3>
         <p>
-          The reason why we target a final layer of 1 neuron is simple... we
-          want the model to output a single value: the predicted price. For the
-          final layer, we pick a linear activation function because it simply
+          The reason why we target a final layer of 1 neuron is simple, we want
+          the model to output a single value: the predicted price. For the final
+          layer, we pick a linear activation function because it simply
           multiplies the output by 1. It's sometimes called "no activation"
           since it just returns the value directly. This layer is only there to
           output the final predicted value.
@@ -227,15 +225,18 @@ const Training = () => {
         <p>
           Picking the right settings to train the model was once again a trial
           and error process. I first started with a batch size of around 5% of
-          my data. This resulted in a model that would overfit the training
-          data. I increased it gradually to avoid this issue and found that
-          80,000 gave the best results.
+          my data. This resulted in a model that would{" "}
+          <a href="https://www.ibm.com/cloud/learn/overfitting#:~:text=Overfitting%20is%20a%20concept%20in,unseen%20data%2C%20defeating%20its%20purpose.">
+            overfit
+          </a>{" "}
+          the training data. I increased it gradually to avoid this issue and
+          found that batches of 80,000 gave the best results.
         </p>
         <br />
         <p>
           For the number of epochs, I noticed there wasn't really any point in
-          going over 500, the model peaked as you can see in the training
-          history figure below.
+          going over 500, the model peaked after 400 epochs as I explain below
+          with the training history figure.
         </p>
         <br />
         <p>
@@ -273,10 +274,10 @@ const Training = () => {
         <br />
         <p>
           As we can see from this sample, some predictions are very close to
-          reality, others differ slightly and a few are way off. if compute the
-          mean prediction error (difference between real and predicted price),
-          we see that our model's predictions are on average 38,913$ off the
-          real selling price. That is significant! It's about 14.9% of the
+          reality, others differ slightly and a few are way off. By computing
+          the mean prediction error (difference between real and predicted
+          price), we see that our model's predictions are on average 38,913$ off
+          the real selling price. That's significant! It's about 14.9% of the
           average home selling price. Another thing we can compute is the
           standard deviation of prediction errors which is 42,502$ or around
           18.5%. This tells us that our model is quite inconsistent, it
@@ -286,7 +287,13 @@ const Training = () => {
         <h3>Conclusion</h3>
         <p>
           My hypothesis for the reason behind this poor performance is that we
-          simply don't have enough data.
+          simply don't have enough data. After preprocessing, we're left with a
+          little less than 95,000 listings to which we lose 20% for our
+          validation dataset. The occasional very accurate prediction occurs
+          when the model is faced with a set of validation values that are well
+          represented inside the training dataset. This is a sign that this
+          model has potential. With more data, I'm sure the methods presented in
+          this article would yield great results.
         </p>
       </div>
     </div>
