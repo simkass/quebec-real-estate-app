@@ -1,6 +1,7 @@
 {
   "name": "quebec-real-estate-app",
   "version": "0.1.0",
+  "homepage": "https://simkass.github.io/quebec-real-estate-app",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.10.0",
