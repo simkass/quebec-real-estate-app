@@ -12,3 +12,6 @@ price with a 15% margin of error.
 \
 \
 Full website here: http://simonkassab.com/quebec-real-estate-app/
+\
+\
+Deployement tutorial: https://github.com/gitname/react-gh-pages
