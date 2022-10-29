@@ -24,7 +24,7 @@ const Training = () => {
     "Price",
   ];
 
-  const scaled_columns = [
+  const scaledColumns = [
     "Living Area",
     "Bedrooms",
     "Bathrooms",
@@ -32,6 +32,20 @@ const Training = () => {
     "Listing Year",
     "Age",
     "Price",
+  ];
+
+  const resultsColumns = [
+    "Location",
+    "Subtype",
+    "Living Area",
+    "Lot Dimensions",
+    "Bedrooms",
+    "Bathrooms",
+    "Levels",
+    "Listing Year",
+    "Age",
+    "Real Price",
+    "Predicted Price",
   ];
 
   const inputLayerCode =
@@ -107,8 +121,8 @@ const Training = () => {
         </p>
         <CsvTable
           filepath="./assets/data/scaled_sample.csv"
-          columns={scaled_columns}
-          columns_display={scaled_columns}
+          columns={scaledColumns}
+          columns_display={scaledColumns}
         />
         <br />
         <h2>Designing the Neural Network.</h2>
@@ -247,6 +261,15 @@ const Training = () => {
           and its time to stop training.
         </p>
         <Plot path="./assets/plots/training.png" title="Training history" />
+        <p>
+          Let's now look at some of the predictions our model did on the
+          validation data.
+        </p>
+        <CsvTable
+          filepath="./assets/data/results_sample.csv"
+          columns={resultsColumns}
+          columns_display={resultsColumns}
+        />
         <h3>Conclusion</h3>
       </div>
     </div>
